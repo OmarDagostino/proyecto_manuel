@@ -324,6 +324,16 @@ p
   background-color: orangered;
   height:40px;
 }
+#mensaje_de_mail_inactivado
+{
+  grid-column:4/7;
+  grid-row:2/3;
+  display:none;
+  font-size: 60%;
+  font-weight: bolder;
+  background-color: orangered;
+  height:60px; 
+}
 #titulo_de_la_agenda
 {
   grid-column: 4/6;
