@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/estilos_de_mantenimiento_de_la_agenda.css">
+    <title>gestion-de-agenda</title>
+</head>
+<body>
+   <main id="main1">
+    <h1>
+        Mantenimiento de la agenda de Clases de Canto y Guitarra
+    </h1>
+    <h2>
+        Bienvenido Juan Manuel
+    </h2>
+    
+    <div id="ingreso_de_clave">
+        <h3>
+        Por favor ingresa tu clave de seguridad
+        </h3>
+        <form>
+            <label for="password"> Contraseña</label> 
+            <input type="password" size="15"  name="password"> 
+            <input id="boton_de_login" type="button" name="entrar" value="Log-In"> 
+            <input id="boton_de_logout" type="button" name="salir" value="Log-Out"> 
+        </form>
+    </div>
+    <div id="actividades">
+        <h3>
+            Que deseas hacer ?
+        </h3>
+        <p id="mensaje">
+            Mensaje de error
+        </p>
+        <br>
+        <form id="miformulario">
+        <button type="button" class="btn" id="agregar_clases">Agregar horarios de clases</button>
+        <label for="fecha-n"><b>Fecha</b></label>
+        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-n"> 
+        <label for="hora-n"><b>hora</b></label>
+        <input type="number" style="width:25px" placeholder="hh" name="hora-n"> 
+        <br> <br>
+        <button type="button" class="btn" id="eliminar_clases">Eliminar horarios de clases</button>
+        <label for="fecha-e"><b>Fecha</b></label>
+        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-e"> 
+        <label for="hora-e"><b>hora</b></label>
+        <input type="number" style="width:25px" placeholder="hh" name="hora-e"> 
+        <br> <br>
+        <button type="button"  class="btn" id="agendar_clases">Agendar una clase</button>
+        <label for="fecha-a"><b>Fecha</b></label>
+        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-a"> 
+        <label for="hora-a"><b>hora</b></label>
+        <input type="number" style="width:25px" placeholder="hh" name="hora-a"> 
+        <label for="correo_electronico_a"> Correo Electrónico del alumno</label> 
+        <input type="email" size="55"  name="correo_electronico_a" id="email-a"> 
+        <select id="duracion-a" >
+                <option value="0">Duracion de la clase</option>
+                <option value="45">45 minutos </option>
+                <option value="60">60 minutos </option>
+        </select>
+        <select id="tema-a">
+            <option value="0">tema</option>
+            <option value="canto">Canto </option>
+            <option value="guita">Guitarra </option>
+        </select>      
+        <br> <br>
+        <button type="button"  class="btn" id="desagendar_clases">Desagendar una clase</button>
+        <label for="fecha-d"><b>Fecha</b></label>
+        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-d"> 
+        <label for="hora-d"><b>hora</b></label>
+        <input type="number" style="width:25px" placeholder="hh" name="hora-d"> 
+        <br> <br>
+        <button type="button" class="btn" id="ver_agenda">Ver Agenda de un dia</button>
+        <label for="fecha-v"><b>Fecha</b></label>
+        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-v"> 
+        <br> <br>
+        <button type="button"  class="btn" id="inactivar_alumno">Inactivar un alumno</button>
+        <label for="correo_electronico_i"> Correo Electrónico del alumno</label> 
+        <input id="correo_electronico_i" type="email" size="55"  name="correo_electronico_i"> 
+        <br> <br>
+        <button type="button"  class="btn" id="reactivar_alumno">Re-activar un alumno</button>
+        <label for="correo_electronico_r"> Correo Electrónico del alumno</label> 
+        <input id="correo_electronico_r" type="email" size="55"  name="correo_electronico_r"> 
+    </form>
+    </div>
+    <div id="volver">
+        <p>
+            Volver a tu pagina web
+            <button type="button" class="btn" id="volver_inicio">Volver al Inicio </button>
+            <button type="button" class="btn" id="volver_reserva">Volver a la página de reserva de turnos</button>
+        </p>
+
+    </div>
+</main>
+<main id="main2">
+    <h1>
+        Agenda de Clases de Canto y Guitarra del dia
+    </h1>
+    <h2 id="fecha_a_desplegar">
+        dd/mes/año
+    </h2>
+    <table>
+        <tr>
+        <th class="columna1">
+        Hora 
+        </th>   
+        <th class="columna2">
+        Estado                                         
+        </th>
+        <th class="columna3">
+        Dur.
+        </th> 
+        <th class="columna4">
+           Conten. 
+        </th>  
+        <th class="columna5">
+             Email  del  alumno
+        </th>  
+        <th class="columna6">
+             Apellido y Nombre
+        </th>  
+        <th class="columna7">
+            Teléfono   
+        </th> 
+        <th class="columna8">
+            Mensaje   
+        </th>  
+    </tr>
+    <tr id="hora-de-clase-1">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-2">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-3">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-4">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-5">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-6">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-7">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-8">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-9">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-10">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-11">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-12">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-13">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-14">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-15">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-16">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-17">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-18">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-19">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-20">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-21">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-22">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-23">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+        <tr id="hora-de-clase-24">
+            <td class="columna1">
+            </td>
+            <td class="columna2">
+            </td>
+            <td class="columna3">
+            </td>
+            <td  class="columna4">
+            </td>
+            <td class="columna5">
+            </td>
+            <td class="columna6">
+            </td>
+            <td  class="columna7">
+            </td>
+            <td  class="columna8">
+            </td>
+        </tr>
+
+    </table>
+    <button type="button" class="btn" id="VolverAMantenimiento">Volver a la pagina de mantenimiento de clases</button>
+</main>
+    <!--script type="module" src="../Javascrips/javascripts_mantenimiento_agenda_firestore.js"> </script-->
+    <script type="module" src="../Javascrips/javascripts_mantenimiento_agenda.js"> </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+#actividades
+{
+    display:none;
+    text-align:left;  
+    margin-left: 10px;
+}
+h1 
+{
+    text-align: center;
+    margin-top: 2px;
+}
+h2
+{
+    text-align: center;
+    margin-top: 5px;
+}
+h3
+{
+    text-align: center;
+    margin-top: 20px;
+}
+#ingreso_de_clave
+{
+    text-align: center ;
+}
+#volver
+{
+    margin-left: 30%;
+}
+#mensaje
+{
+    display:none;
+    font-weight: bolder;
+    width: fit-content;
+}
+#main1
+{
+    display:block
+}
+#main2
+{
+    display:none
+}
+.columna1
+{
+    width: 30px;
+}
+.columna2
+{
+    width: 30px;
+}
+.columna3
+{
+    width: 30px;
+}
+.columna4
+{
+    width: 30px;
+}
+.columna5
+{
+    width: 325px;
+}
+.columna6
+{
+    width:  325px;
+}
+.columna7
+{
+    width: 150px;
+}
+.columna8
+{
+    width:  325px;
+}
+table, th, td 
+  {
+    border: 1px solid black;
+    text-align: center;
+  }

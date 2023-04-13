@@ -338,8 +338,8 @@ p
 {
   grid-column: 4/6;
   grid-row:3/4;
-  transform:translatey(175px);
-  margin-left: 72px;
+  transform:translatey(155px);
+   margin-left: 85px;
   font-size: 92%;
 }
 #mes_calendario
@@ -374,7 +374,7 @@ table, th, td
 }
 #mesyaniodesplegados
 {
-  transform:translate(280px, 0px)
+  transform:translate(300px, -20px)
 }
 #explica_la_reserva
 {
@@ -418,7 +418,7 @@ table, th, td
 }
 #haz_click
 {
-  grid-column:1/span 3;
+  grid-column:1/span 2;
   grid-row: 5/6;
   font-size: 90%;
   text-align: center;

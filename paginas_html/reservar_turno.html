@@ -64,7 +64,7 @@
         <div id="registracion">
             Si nunca has ingresado 
                        
-            <button class="open-button" onclick="openForm()">Registrate</button>
+            <button class="open-button" id="registrate">Registrate</button>
             <div class="form-popup" id="myForm">
               <!-- action="/action_page.php"--> 
                 <form class="form-container">
@@ -76,16 +76,16 @@
                     <input type="email" placeholder="repite tu correo" name="emailN1" required>
                     
                     <label for="nombre"><b>Nombre</b></label>
-                    <input type="text" placeholder="Nombre" name="nombre" required>
+                    <input id="name1" type="text" placeholder="Nombre" name="nombre" required>
                     
                     <label for="apellido"><b>Apellido</b></label>
-                    <input type="text" placeholder="Apellido" name="apellido" required>
+                    <input id="surname1" type="text" placeholder="Apellido" name="apellido" required>
                     
                     <label for="telefono">Numero de teléfono (opcional)</label>
-                    <input type="tel" placeholder="( ) nnnn-nnnn" name="telefono" >
+                    <input id="phone1" type="tel" placeholder="( ) nnnn-nnnn" name="telefono" >
                     
-                    <button type="button" onclick="registrarNuevoUsuario ()" class="btn">Registrarse</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">Cancelar</button>
+                    <button type="button" id="NuevoUsuario" class="btn">Registrarse</button>
+                    <button type="button" class="btn cancel" id="cerrarUsuario">Cancelar</button>
                 </form>
             </div>
 
@@ -94,8 +94,8 @@
             <form  name="direcciondecorreo" method="post">
                 <label for="correo_electronico"> Correo Electrónico</label> <br>
                 <input type="email" id="correo_electronico" size="55"  name="correo_electronico"> <br>
-                <input id="boton_de_login" type="button" name="enviar" value="log in" onclick="logIn()"> <br>
-                <input id="boton_de_logoff" type="button" name="salir" value="log off" onclick="logOff()"> <br>
+                <input id="boton_de_login" type="button" name="enviar" value="log in"> <br>
+                <input id="boton_de_logoff" type="button" name="salir" value="log off"> <br>
             </form>
 
             <br>
@@ -106,7 +106,7 @@
                     <input type="month" id="mesyanio" name="mesyanio">
                 </div>
                 <br>
-                <input  type="button" onclick="actualizarMesyAnioElegidos ()" value="Ver días con clases disponibles"> 
+                <input  type="button" id="actualizarMMyAA" value="Ver días con clases disponibles"> 
             </form>
           <div id="mesyaniodesplegados">
                 Mes del año
@@ -164,58 +164,58 @@
                     <th style="width:14.3%"> Sab </th>                            
                 </tr>
                 <tr>
-                    <td onclick="openForm1(11)" id="dia11"> 01</td>
-                    <td onclick="openForm1(12)" id="dia12"> 02</td>
-                    <td onclick="openForm1(13)" id="dia13"> 03</td>
-                    <td onclick="openForm1(14)" id="dia14"> 04</td>
-                    <td onclick="openForm1(15)" id="dia15"> 05</td>
-                    <td onclick="openForm1(16)" id="dia16"> 06 </td>
-                    <td onclick="openForm1(17)" id="dia17"> 07 </td>
+                    <td  id="dia11"> 01</td>
+                    <td  id="dia12"> 02</td>
+                    <td  id="dia13"> 03</td>
+                    <td  id="dia14"> 04</td>
+                    <td  id="dia15"> 05</td>
+                    <td  id="dia16"> 06</td>
+                    <td  id="dia17"> 07</td>
                 </tr>
                 <tr>
-                    <td  onclick="openForm1(21)" id="dia21"> 08</td>
-                    <td  onclick="openForm1(22)" id="dia22"> 09</td>
-                    <td  onclick="openForm1(23)" id="dia23"> 10</td>
-                    <td  onclick="openForm1(24)" id="dia24"> 11</td>
-                    <td  onclick="openForm1(25)" id="dia25"> 12</td>
-                    <td  onclick="openForm1(26)" id="dia26"> 13</td>
-                    <td  onclick="openForm1(27)" id="dia27"> 14</td>
+                    <td  id="dia21"> 08</td>
+                    <td  id="dia22"> 09</td>
+                    <td  id="dia23"> 10</td>
+                    <td  id="dia24"> 11</td>
+                    <td  id="dia25"> 12</td>
+                    <td  id="dia26"> 13</td>
+                    <td  id="dia27"> 14</td>
                 </tr>
                 <tr>
-                    <td  onclick="openForm1(31)" id="dia31"> 15</td>
-                    <td  onclick="openForm1(32)" id="dia32"> 16</td>
-                    <td  onclick="openForm1(33)" id="dia33"> 17</td>
-                    <td  onclick="openForm1(34)" id="dia34"> 18 </td>
-                    <td  onclick="openForm1(35)" id="dia35"> 19</td>
-                    <td  onclick="openForm1(36)" id="dia36"> 20</td>
-                    <td  onclick="openForm1(37)" id="dia37"> 21</td>
+                    <td  id="dia31"> 15</td>
+                    <td  id="dia32"> 16</td>
+                    <td  id="dia33"> 17</td>
+                    <td  id="dia34"> 18</td>
+                    <td  id="dia35"> 19</td>
+                    <td  id="dia36"> 20</td>
+                    <td  id="dia37"> 21</td>
                 </tr>
                 <tr>
-                    <td  onclick="openForm1(41)" id="dia41"> 22</td>
-                    <td  onclick="openForm1(42)" id="dia42"> 23</td>
-                    <td  onclick="openForm1(43)" id="dia43"> 24</td>
-                    <td  onclick="openForm1(44)" id="dia44"> 25</td>
-                    <td  onclick="openForm1(45)" id="dia45"> 26</td>
-                    <td  onclick="openForm1(46)" id="dia46"> 27</td>
-                    <td  onclick="openForm1(47)" id="dia47"> 28</td>
+                    <td  id="dia41"> 22</td>
+                    <td  id="dia42"> 23</td>
+                    <td  id="dia43"> 24</td>
+                    <td  id="dia44"> 25</td>
+                    <td  id="dia45"> 26</td>
+                    <td  id="dia46"> 27</td>
+                    <td  id="dia47"> 28</td>
                 </tr>
                 <tr>
-                    <td  onclick="openForm1(51)" id="dia51"> 29</td>
-                    <td  onclick="openForm1(52)" id="dia52"> 30</td>
-                    <td  onclick="openForm1(53)" id="dia53"> 31</td>
-                    <td  onclick="openForm1(54)" id="dia54"> 32</td>
-                    <td  onclick="openForm1(55)" id="dia55"> 33</td>
-                    <td  onclick="openForm1(56)" id="dia56"> 34</td>
-                    <td  onclick="openForm1(57)" id="dia57"> 35</td>
+                    <td  id="dia51"> 29</td>
+                    <td  id="dia52"> 30</td>
+                    <td  id="dia53"> 31</td>
+                    <td  id="dia54"> 32</td>
+                    <td  id="dia55"> 33</td>
+                    <td  id="dia56"> 34</td>
+                    <td  id="dia57"> 35</td>
                 </tr>
                 <tr id="ultima_semana">
-                    <td  onclick="openForm1(61)" style="width:14.3%" id="dia61"> 36</td>
-                    <td  onclick="openForm1(62)" style="width:14.3%" id="dia62"> 37</td>
-                    <td  onclick="openForm1(63)" style="width:14.3%" id="dia63"> 38</td>
-                    <td  onclick="openForm1(64)" style="width:14.3%" id="dia64"> 39</td>
-                    <td  onclick="openForm1(65)" style="width:14.3%" id="dia65"> 40</td>
-                    <td  onclick="openForm1(66)" style="width:14.3%" id="dia66"> 41</td>
-                    <td  onclick="openForm1(67)" style="width:14.3%" id="dia67"> 42</td>
+                    <td  style="width:14.3%" id="dia61"> 36</td>
+                    <td  style="width:14.3%" id="dia62"> 37</td>
+                    <td  style="width:14.3%" id="dia63"> 38</td>
+                    <td  style="width:14.3%" id="dia64"> 39</td>
+                    <td  style="width:14.3%" id="dia65"> 40</td>
+                    <td  style="width:14.3%" id="dia66"> 41</td>
+                    <td  style="width:14.3%" id="dia67"> 42</td>
                 </tr>
             </table>
         </div>
@@ -860,12 +860,12 @@
                     </p>
                 </div>
                 <br> <br>
-                <button type="button" class="boton" onclick="actualizarAgenda ()">Actualizar agenda</button>
-                <button type="button" class="cancelacion" onclick="closeForm1()">No actualizar agenda</button>
+                <button type="button" class="boton" id="actualizarestaAgenda">Actualizar agenda</button>
+                <button type="button" class="cancelacion" id="noactualizarestaAgenda">No actualizar agenda</button>
             </form>
         </div>
     </div>
 </main>        
-    <script src="../Javascrips/manueljs.js"> </script>
+    <script type="module" src="../Javascrips/manueljs.js"> </script>
 </body>
 </html>
