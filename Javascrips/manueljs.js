@@ -284,6 +284,9 @@ openForm1 (67)
 
 let logueado = false
 let dia_e = 0
+let elUltimoMail = JSON.parse (localStorage.getItem ('lastmail'));
+if (elUltimoMail!=null) { document.getElementById("correo_electronico").value= elUltimoMail}
+
 class alumno 
 {
   constructor(emailAlumno, nombreAlumno, apellidoAlumno, telefonoAlumno, fechaAlumno, estadoAlumno)
@@ -822,6 +825,9 @@ async function logIn ()
       let mensajelogin=("Bienvenido "+ nomalu + " " + apealu + " ! , ya puedes agendar tu clase")
       document.getElementById("mensaje_de_bienvenida").innerHTML= mensajelogin
       document.getElementById("mensaje_de_bienvenida").style.display=("block")
+      const ultimoemail = JSON.stringify (mailadress)
+      localStorage.setItem('lastmail', ultimoemail)
+    
     }   
 }
 //**********************************************************

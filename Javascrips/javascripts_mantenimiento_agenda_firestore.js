@@ -100,6 +100,7 @@ const agendaRef = collection(db, "agenda/clases/clasesPorFecha");
 const docId = fecha_y_hora_de_la_agenda;
 let fecha_agenda= fecha_y_hora_de_la_agenda.slice(0, 10);
 let hora_agenda= fecha_y_hora_de_la_agenda.slice(11);
+
 const docData = {
   disponibilidad: "2",
   duracion: dura_a,
@@ -109,7 +110,7 @@ const docData = {
   hora: hora_a,
   mensaje: msg
 };
-
+console.log (docData)
 await updateDoc(doc(agendaRef, fecha_y_hora_de_la_agenda), {docData})
 .then(() => {
   console.log("Documento actualizado exitosamente.");
@@ -455,3 +456,91 @@ async function consultarAgenda (mesyanio)
 }
 
 export {consultarAgenda, disponibilidad, mail_agendados, tema_agendado, duracion_agendada, mensaje_agendado} 
+
+
+class Alumno 
+{
+  constructor (emailAlumno, nombreAlumno, apellidoAlumno, telefonoAlumno)
+  {
+    this.emailAlumno=emailAlumno
+    this.nombreAlumno=nombreAlumno
+    this.apellidoAlumno=apellidoAlumno
+    this.telefonoAlumno=telefonoAlumno
+  }
+}
+let alumnos
+let arrayAlumnos = []
+async function consultarAlumnos (activo_solicitado)
+{
+  const db = getFirestore(app);
+  const q= query (collection(db, "agenda/clases/alumnos") , where("activo", "==", activo_solicitado)) ;
+  const querySnapshotAlumnos = await getDocs(q);
+  querySnapshotAlumnos.forEach ((doc) => 
+  { 
+    if (doc.data().telefono!="Admin") 
+    {
+       alumnos = new Alumno 
+       ( 
+        doc.data ().email, 
+        doc.data ().nombre, 
+        doc.data ().apellido,
+        doc.data ().telefono
+       )
+       arrayAlumnos.push (alumnos)
+    }    
+  });
+ console.table (arrayAlumnos)
+
+}
+
+export {consultarAlumnos, arrayAlumnos} 
+
+class Aagenda_de_un_alumno 
+{
+  constructor (fecha_alumno, hora_alumno, duracion_alumno,tipo_alumno, mensaje_alumno )
+  {
+    this.fecha_alumno=fecha_alumno
+    this.hora_alumno=hora_alumno
+    this.duracion_alumno=duracion_alumno
+    this.tipo_alumno=tipo_alumno
+    this.mensaje_alumno=mensaje_alumno
+  }
+}
+let clases_del_alumno
+let arrayClases = []
+async function verAgendaAlumno (mail_solicitado, futuro)
+{
+  const fechaActual = new Date()
+  let mes_de_hoy
+  let dia_de_hoy
+  const dia_de_h = fechaActual.getDate() ;
+  const mes_de_h = fechaActual.getMonth() + 1; 
+  if (mes_de_h<10) { mes_de_hoy= ("0"+mes_de_h)}
+  else (mes_de_hoy = mes_de_h)
+  if (dia_de_h<10) { dia_de_hoy= ("0"+dia_de_h)}
+  else (dia_de_hoy = dia_de_h)
+  const anio_de_hoy = fechaActual.getFullYear();
+  const fecha_a_consultar = (anio_de_hoy+"-"+mes_de_hoy+"-"+dia_de_hoy)
+  const db = getFirestore(app);
+  let q
+  if (futuro=="futuro") 
+  {q= query (collection(db, "agenda/clases/clasesPorFecha") , where("docData.email", "==", mail_solicitado) , where("docData.fecha", ">", fecha_a_consultar)) ;}
+  else 
+  {q= query (collection(db, "agenda/clases/clasesPorFecha") , where("docData.email", "==", mail_solicitado) , where("docData.fecha", "<=", fecha_a_consultar)) ;}
+  console.log (fecha_a_consultar)
+  console.log (mail_solicitado)
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach ((doc) => 
+  { 
+    clases_del_alumno = new Aagenda_de_un_alumno
+       ( 
+        doc.data ().docData.fecha, 
+        doc.data ().docData.hora, 
+        doc.data ().docData.duracion,
+        doc.data ().docData.tipo,
+        doc.data ().docData.mensaje,
+       )
+       arrayClases.push (clases_del_alumno)
+  });
+}
+export {verAgendaAlumno, arrayClases} 

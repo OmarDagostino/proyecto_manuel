@@ -21,6 +21,13 @@ const log_volver_i = document.getElementById("volver_inicio")
 log_volver_i.addEventListener('click', volverInicio )
 const log_volver_r = document.getElementById("volver_reserva")
 log_volver_r.addEventListener('click', volverReservarTurno )
+const log_consultar_alumnos = document.getElementById("consultar_alumnos_activos")
+log_consultar_alumnos.addEventListener('click', consularListaAlumnos_activos )
+const log_consultar_alumnos1 = document.getElementById("consultar_alumnos_inactivos")
+log_consultar_alumnos1.addEventListener('click', consularListaAlumnos_inactivos )
+const log_consultar_agenda_alumno = document.getElementById("consultar_agenda_alumno")
+log_consultar_agenda_alumno.addEventListener('click', consularAgendaDeUnAlumno )
+
 let fecha
 let hora
 let tiene_error = false
@@ -32,10 +39,15 @@ import {agendar_una_clase} from "./javascripts_mantenimiento_agenda_firestore.js
 import {desagendar_una_clase} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {inactivarUnAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {reactivarUnAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {consultarAlumnos} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {verAgendaAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {datos} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {existe_agenda} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {existe_alumno} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {datosAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {arrayAlumnos} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {arrayClases} from "./javascripts_mantenimiento_agenda_firestore.js";
+
 function validarFechaYHora (fecha, hora)
 {
     tiene_error = false
@@ -140,9 +152,6 @@ async function  agendarClases ()
     {
         let fechaYHora = (fecha+"-"+ hora)
         await obtenerAgenda (fechaYHora)
-        console.log ("disponibilidad")
-        console.log (existe_agenda)
-        console.log (datos.docData.disponibilidad)
         if (existe_agenda && datos.docData.disponibilidad == "1")  
             {
                 agendar_una_clase 
@@ -152,7 +161,8 @@ async function  agendarClases ()
                 document.getElementById("tema-a").value,
                 document.getElementById("email-a").value,
                 fecha,
-                hora 
+                hora, 
+                "clase agendada por el profesor" 
                 )
                 document.getElementById("mensaje").innerHTML = ("La clase " + fechaYHora + " ha sido agendada");
                 document.getElementById("mensaje").style.display = ("Block");
@@ -300,76 +310,159 @@ async function verAgenda ()
 async function inactivarAlumno ()
 {
     let correo_i= document.getElementById("correo_electronico_i").value 
-    await obtenerAlumno (correo_i)
-    console.log ("el mail")
-    console.log (correo_i)
-    console.log (existe_alumno)
-    console.log (datosAlumno.apellido)
-    if (existe_alumno) 
-    { 
-        if (datosAlumno.activo=="inactivo")
-        {
-            document.getElementById("mensaje").innerHTML = ("El alumno que quieres inactivar ya esta inactivo");
-            document.getElementById("mensaje").style.display = ("Block");
-            document.getElementById("mensaje").style.backgroundColor = ("Red");
-            document.getElementById("mensaje").style.color = ("Yellow");    
-        }
-        else
-        { 
-            await inactivarUnAlumno (correo_i)
-            document.getElementById("mensaje").innerHTML = ("El alumno " + correo_i + " ha sido inactivado");
-            document.getElementById("mensaje").style.display = ("Block");
-            document.getElementById("mensaje").style.backgroundColor = ("lightgreen");
-            document.getElementById("mensaje").style.color = ("black");    
-            const myForm = document.getElementById("miformulario");
-            myForm.reset(); 
-        }
+    if (correo_i=="") 
+    {
+    document.getElementById("mensaje").innerHTML = ("Debes ingresar un email ");
+    document.getElementById("mensaje").style.display = ("Block");
+    document.getElementById("mensaje").style.backgroundColor = ("Red");
+    document.getElementById("mensaje").style.color = ("Yellow"); 
     }
     else 
     {
-        document.getElementById("mensaje").innerHTML = ("El alumno que quieres inactivar no existe");
-        document.getElementById("mensaje").style.display = ("Block");
-        document.getElementById("mensaje").style.backgroundColor = ("Red");
-        document.getElementById("mensaje").style.color = ("Yellow");    
-        
+        await obtenerAlumno (correo_i)
+        if (existe_alumno) 
+        { 
+            if (datosAlumno.activo=="inactivo")
+            {
+                document.getElementById("mensaje").innerHTML = ("El alumno que quieres inactivar ya esta inactivo");
+                document.getElementById("mensaje").style.display = ("Block");
+                document.getElementById("mensaje").style.backgroundColor = ("Red");
+                document.getElementById("mensaje").style.color = ("Yellow");    
+            }
+            else
+            { 
+                await inactivarUnAlumno (correo_i)
+                document.getElementById("mensaje").innerHTML = ("El alumno " + correo_i + " ha sido inactivado");
+                document.getElementById("mensaje").style.display = ("Block");
+                document.getElementById("mensaje").style.backgroundColor = ("lightgreen");
+                document.getElementById("mensaje").style.color = ("black");    
+                const myForm = document.getElementById("miformulario");
+                myForm.reset(); 
+            }
+        }
+        else 
+        {
+            document.getElementById("mensaje").innerHTML = ("El alumno que quieres inactivar no existe");
+            document.getElementById("mensaje").style.display = ("Block");
+            document.getElementById("mensaje").style.backgroundColor = ("Red");
+            document.getElementById("mensaje").style.color = ("Yellow");    
+            
+        }
     }
 }
 async function reactivarAlumno ()
 {
-    let correo_r= document.getElementById("correo_electronico_r").value 
-    await obtenerAlumno (correo_r)
-    console.log (correo_r)
-    console.log (existe_alumno)
-    console.log (datosAlumno.activo)
-    if (existe_alumno) 
-    { 
-        if (datosAlumno.activo=="activo")
-        {
-            document.getElementById("mensaje").innerHTML = ("El alumno que quieres re-activar ya esta activo");
-            document.getElementById("mensaje").style.display = ("Block");
-            document.getElementById("mensaje").style.backgroundColor = ("Red");
-            document.getElementById("mensaje").style.color = ("Yellow");    
-        }
-        else
-        { 
-            await reactivarUnAlumno (correo_r)
-            document.getElementById("mensaje").innerHTML = ("El alumno " + correo_r + " ha sido reactivado ");
-            document.getElementById("mensaje").style.display = ("Block");
-            document.getElementById("mensaje").style.backgroundColor = ("lightgreen");
-            document.getElementById("mensaje").style.color = ("black"); 
-            const myForm = document.getElementById("miformulario");
-            myForm.reset();
-           
-        }
-    }
-    else 
+    let correo_r= document.getElementById("correo_electronico_r").value
+    if (correo_r=="") 
     {
-        document.getElementById("mensaje").innerHTML = ("El alumno que quieres reactivar no existe");
+        document.getElementById("mensaje").innerHTML = ("Debes ingresar un email");
         document.getElementById("mensaje").style.display = ("Block");
         document.getElementById("mensaje").style.backgroundColor = ("Red");
         document.getElementById("mensaje").style.color = ("Yellow");    
-        
     }
+    else
+    { 
+        await obtenerAlumno (correo_r)
+            if (existe_alumno) 
+        { 
+            if (datosAlumno.activo=="activo")
+            {
+                document.getElementById("mensaje").innerHTML = ("El alumno que quieres re-activar ya esta activo");
+                document.getElementById("mensaje").style.display = ("Block");
+                document.getElementById("mensaje").style.backgroundColor = ("Red");
+                document.getElementById("mensaje").style.color = ("Yellow");    
+            }
+            else
+            { 
+                await reactivarUnAlumno (correo_r)
+                document.getElementById("mensaje").innerHTML = ("El alumno " + correo_r + " ha sido reactivado ");
+                document.getElementById("mensaje").style.display = ("Block");
+                document.getElementById("mensaje").style.backgroundColor = ("lightgreen");
+                document.getElementById("mensaje").style.color = ("black"); 
+                const myForm = document.getElementById("miformulario");
+                myForm.reset();
+            
+            }
+        }
+        else 
+        {
+            document.getElementById("mensaje").innerHTML = ("El alumno que quieres reactivar no existe");
+            document.getElementById("mensaje").style.display = ("Block");
+            document.getElementById("mensaje").style.backgroundColor = ("Red");
+            document.getElementById("mensaje").style.color = ("Yellow");    
+            
+        }
+    }
+}
+function consularListaAlumnos_activos ()
+{
+    consularListaAlumnos ("activo")
+}
+function consularListaAlumnos_inactivos ()
+{
+    consularListaAlumnos ("inactivo")
+}
+
+async function consularListaAlumnos (actividad)
+{
+    const log_volver_m = document.getElementById("VolverAMantenimiento1")
+            log_volver_m.addEventListener('click', volverAMantenimiento1)  
+    
+        await consultarAlumnos (actividad)
+        if (actividad=="activo") 
+        {
+            document.getElementById("alumnos_activos").style.display='block'
+            document.getElementById("alumnos_inactivos").style.display='none'
+        } 
+        else
+        {
+            document.getElementById("alumnos_activos").style.display='none'
+            document.getElementById("alumnos_inactivos").style.display='block'
+        
+
+        }
+        const contenedorx = document.querySelector('#secciondealumnos');
+        const nuevaseccion = document.createElement('table');
+        contenedorx.appendChild(nuevaseccion);
+        nuevaseccion.classList.add ("paraborrar")
+
+    let indiceAlumnos = arrayAlumnos.length
+
+    for (let indi_alu=0 ; indi_alu<indiceAlumnos; indi_alu++)
+    {
+        // 
+        // crear el DOM con el padron de alumnos
+        //
+        const contenedor = document.querySelector('.paraborrar');
+        const nuevoRenglon = document.createElement('tr');
+        contenedor.appendChild(nuevoRenglon);
+        const nuevoElemento = document.createElement('td');
+        nuevoElemento.textContent = (arrayAlumnos[indi_alu].emailAlumno);
+        nuevoElemento.style.width = '280px'
+        nuevoElemento.style.textAlign = 'left'
+        nuevoElemento.style.paddingLeft = '20px'
+        nuevoRenglon.appendChild (nuevoElemento);
+        const nuevoElemento1 = document.createElement('td');
+        nuevoElemento1.textContent = (arrayAlumnos[indi_alu].nombreAlumno);
+        nuevoElemento1.style.width = '280px'
+        nuevoElemento1.style.textAlign = 'left'
+        nuevoElemento1.style.paddingLeft = '20px'
+        nuevoRenglon.appendChild (nuevoElemento1);
+        const nuevoElemento2 = document.createElement('td');
+        nuevoElemento2.textContent = (arrayAlumnos[indi_alu].apellidoAlumno);
+        nuevoElemento2.style.width = '380px'
+        nuevoElemento2.style.textAlign = 'left'
+        nuevoElemento2.style.paddingLeft = '20px'
+        nuevoRenglon.appendChild (nuevoElemento2);
+        const nuevoElemento3 = document.createElement('td');
+        nuevoElemento3.textContent = (arrayAlumnos[indi_alu].telefonoAlumno);
+        nuevoElemento3.style.width = '150px'
+        nuevoRenglon.appendChild (nuevoElemento3);
+    }
+    document.getElementsByTagName("main")[0].style.display=("none")
+    document.getElementsByTagName("main")[2].style.display=("block")
+    console.log (arrayAlumnos)
+
 }
 function logIn ()
 {
@@ -400,4 +493,112 @@ function volverAMantenimiento ()
     }
     document.getElementsByTagName("main")[0].style.display=("block")
     document.getElementsByTagName("main")[1].style.display=("none")
+}
+function volverAMantenimiento1 ()
+{
+    let indiceAlumnos = arrayAlumnos.length 
+    arrayAlumnos.splice(0,indiceAlumnos)
+    const DOMaborrar = document.querySelector(".paraborrar");
+    DOMaborrar.remove ()  
+    document.getElementsByTagName("main")[0].style.display=("block")
+    document.getElementsByTagName("main")[2].style.display=("none")
+}
+
+async function consularAgendaDeUnAlumno ()
+{
+    const log_volver_m = document.getElementById("VolverAMantenimiento2")
+            log_volver_m.addEventListener('click', volverAMantenimiento2)  
+    let alumno_a_consultar = document.getElementById("correo_electronico_va").value
+    if (alumno_a_consultar == "")   
+    {
+        document.getElementById("mensaje").innerHTML = ("Debes ingresar un email");
+        document.getElementById("mensaje").style.display = ("Block");
+        document.getElementById("mensaje").style.backgroundColor = ("Red");
+        document.getElementById("mensaje").style.color = ("Yellow");    
+    } 
+    else
+    { 
+        await obtenerAlumno (alumno_a_consultar)
+            if (existe_alumno) 
+            {
+                const identificacion_alumno = (datosAlumno.nombre + " "+datosAlumno.apellido+ "   MAIL : "+alumno_a_consultar)
+                document.getElementById("alumno_consultado").innerHTML=identificacion_alumno
+                
+            } 
+            else
+            {
+                const identificacion_alumno = ("no existe alumno en el padron  "+"   MAIL : "+alumno_a_consultar)
+                document.getElementById("alumno_consultado").innerHTML=identificacion_alumno
+            }
+            let tiempo
+            if (document.getElementById("futuro").value=="futuro")
+            {
+                document.getElementById("futuras_clases").style.display="block";
+                document.getElementById("pasadas_clases").style.display="none";          
+                tiempo = "futuro"
+            }
+            else
+            {
+                document.getElementById("futuras_clases").style.display="none";
+                document.getElementById("pasadas_clases").style.display="block";          
+                tiempo = "pasado"
+            }
+            await verAgendaAlumno (alumno_a_consultar,tiempo)
+                    
+            const contenedorxa = document.querySelector('#secciondeagenda');
+            const nuevasecciona = document.createElement('table');
+            contenedorxa.appendChild(nuevasecciona);
+            nuevasecciona.classList.add ("paraborrara");
+            let indiceClases = arrayClases.length
+
+        for (let indi_cla=0 ; indi_cla<indiceClases; indi_cla++)
+        {
+            // 
+            // crear DOM las clases del alumno
+            //
+            const contenedora = document.querySelector('.paraborrara');
+            const nuevoRenglona = document.createElement('tr');
+            contenedora.appendChild(nuevoRenglona);
+            const nuevoElementoa = document.createElement('td');
+            nuevoElementoa.textContent = (arrayClases[indi_cla].fecha_alumno);
+            nuevoElementoa.style.width = '120px'
+            nuevoElementoa.style.textAlign = 'left'
+            nuevoElementoa.style.paddingLeft = '20px'
+            nuevoRenglona.appendChild (nuevoElementoa);
+            const nuevoElementoa1 = document.createElement('td');
+            nuevoElementoa1.textContent = (arrayClases[indi_cla].hora_alumno);
+            nuevoElementoa1.style.width = '40px'
+            nuevoElementoa1.style.textAlign = 'left'
+            nuevoElementoa1.style.paddingLeft = '20px'
+            nuevoRenglona.appendChild (nuevoElementoa1);
+            const nuevoElementoa2 = document.createElement('td');
+            nuevoElementoa2.textContent = ((arrayClases[indi_cla].duracion_alumno)+" min.");
+            nuevoElementoa2.style.width = '72px'
+            nuevoElementoa2.style.textAlign = 'left'
+            nuevoElementoa2.style.paddingLeft = '10px'
+            nuevoRenglona.appendChild (nuevoElementoa2);
+            const nuevoElementoa3 = document.createElement('td');
+            nuevoElementoa3.textContent = (arrayClases[indi_cla].tipo_alumno);
+            nuevoElementoa3.style.width = '120px'
+            nuevoRenglona.appendChild (nuevoElementoa3);
+            const nuevoElementoa4 = document.createElement('td');
+            nuevoElementoa4.textContent = (arrayClases[indi_cla].mensaje_alumno);
+            nuevoElementoa4.style.width = '320px'
+            nuevoRenglona.appendChild (nuevoElementoa4);
+        }
+        document.getElementsByTagName("main")[0].style.display=("none")
+        document.getElementsByTagName("main")[3].style.display=("block")
+        
+    }
+}
+function volverAMantenimiento2 ()
+{
+    document.getElementById("correo_electronico_va").value=null
+    document.getElementById("futuro").value="futuro"
+    let indiceAlumnosa = arrayClases.length 
+    arrayClases.splice(0,indiceAlumnosa)
+    const DOMaborrara = document.querySelector(".paraborrara");
+    DOMaborrara.remove ()  
+    document.getElementsByTagName("main")[0].style.display=("block")
+    document.getElementsByTagName("main")[3].style.display=("none")
 }

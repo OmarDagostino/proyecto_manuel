@@ -35,20 +35,20 @@
             Mensaje de error
         </p>
         <br>
-        <form id="miformulario">
+        <form id="miformulario" style="margin-top: 5px;">
         <button type="button" class="btn" id="agregar_clases">Agregar horarios de clases</button>
         <label for="fecha-n"><b>Fecha</b></label>
         <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-n"> 
         <label for="hora-n"><b>hora</b></label>
         <input type="number" style="width:25px" placeholder="hh" name="hora-n"> 
-        <br> <br>
-        <button type="button" class="btn" id="eliminar_clases">Eliminar horarios de clases</button>
+        <br> 
+        <button style="margin-top: 5px;" type="button" class="btn" id="eliminar_clases">Eliminar horarios de clases</button>
         <label for="fecha-e"><b>Fecha</b></label>
         <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-e"> 
         <label for="hora-e"><b>hora</b></label>
         <input type="number" style="width:25px" placeholder="hh" name="hora-e"> 
-        <br> <br>
-        <button type="button"  class="btn" id="agendar_clases">Agendar una clase</button>
+        <br> 
+        <button style="margin-top: 5px;" type="button"  class="btn" id="agendar_clases">Agendar una clase</button>
         <label for="fecha-a"><b>Fecha</b></label>
         <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-a"> 
         <label for="hora-a"><b>hora</b></label>
@@ -65,24 +65,37 @@
             <option value="canto">Canto </option>
             <option value="guita">Guitarra </option>
         </select>      
-        <br> <br>
-        <button type="button"  class="btn" id="desagendar_clases">Desagendar una clase</button>
+        <br> 
+        <button style="margin-top: 5px;" type="button"  class="btn" id="desagendar_clases">Desagendar una clase</button>
         <label for="fecha-d"><b>Fecha</b></label>
         <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-d"> 
         <label for="hora-d"><b>hora</b></label>
         <input type="number" style="width:25px" placeholder="hh" name="hora-d"> 
-        <br> <br>
-        <button type="button" class="btn" id="ver_agenda">Ver Agenda de un dia</button>
+        <br> 
+        <button style="margin-top: 5px;" type="button" class="btn" id="ver_agenda">Ver Agenda de un dia</button>
         <label for="fecha-v"><b>Fecha</b></label>
         <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-v"> 
-        <br> <br>
-        <button type="button"  class="btn" id="inactivar_alumno">Inactivar un alumno</button>
+        <br> 
+        <button style="margin-top: 5px;" type="button"  class="btn" id="inactivar_alumno">Inactivar un alumno</button>
         <label for="correo_electronico_i"> Correo Electrónico del alumno</label> 
         <input id="correo_electronico_i" type="email" size="55"  name="correo_electronico_i"> 
-        <br> <br>
-        <button type="button"  class="btn" id="reactivar_alumno">Re-activar un alumno</button>
+        <br> 
+        <button style="margin-top: 5px;" type="button"  class="btn" id="reactivar_alumno">Re-activar un alumno</button>
         <label for="correo_electronico_r"> Correo Electrónico del alumno</label> 
         <input id="correo_electronico_r" type="email" size="55"  name="correo_electronico_r"> 
+        <br> 
+        <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_alumnos_activos">Ver padrón de alumnos activos</button>
+        <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_alumnos_inactivos">Ver padrón de alumnos in-activos</button>
+        <br> 
+        <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_agenda_alumno">Consultar la agenda de un alumno</button>
+        <label for="correo_electronico_va"> Correo Electrónico del alumno</label> 
+        <input id="correo_electronico_va" type="email" size="55"  name="correo_electronico_va"> 
+        <select id="futuro" >
+            <option value="futuro">Futuras clases </option>
+            <option value="pasado">Clases pasadas</option>
+        </select>
+        <br> 
+    
     </form>
     </div>
     <div id="volver">
@@ -563,6 +576,79 @@
 
     </table>
     <button type="button" class="btn" id="VolverAMantenimiento">Volver a la pagina de mantenimiento de clases</button>
+</main>
+<main id="main3">
+    <h1>
+        Padrón de Alumnos 
+    </h1>
+    <h2 id="alumnos_activos">
+        ACTIVOS
+    </h2>
+    <h2 id="alumnos_inactivos">
+        INACTIVOS
+    </h2>
+    <table>
+        <tr>
+            <th style="width: 300px;">
+            Dirección de e-mail 
+            </th>   
+            <th style="width: 300px;" >
+            Nombre del alumno                                        
+            </th>
+            <th style="width: 400px;">
+            Apellido del alumno
+            </th> 
+            <th style="width: 150px;">
+            Teléfono 
+            </th>  
+        </tr>
+    </table>
+    <section id="secciondealumnos">
+
+    </section>
+    <!--table id="tabladealumnos" class="paraborrar">
+
+    </table-->
+<button type="button" class="btn" id="VolverAMantenimiento1">Volver a la pagina de mantenimiento de clases</button>
+
+</main>
+<main id="main4">
+    <h1 id="futuras_clases">
+        Consulta de las clases futuras agendadas de 
+    </h1>
+    <h1 id="pasadas_clases">
+        Consultas de clases pasadas de 
+    </h1>
+    <h2 id="alumno_consultado">
+        
+    </h2>
+    <table style="margin-left: 350px;">
+        <tr>
+            <th style="width: 140px !important;">
+            Fecha 
+            </th>   
+            <th style="width: 60px;" >
+            Hora                                       
+            </th>
+            <th style="width: 80px;">
+            Duracion
+            </th> 
+            <th style="width: 120px;">
+            Tipo de clase
+            </th>  
+            <th style="width: 320px;">
+            Mensaje del alumno
+            </th>
+        </tr>
+    </table>
+    <section id="secciondeagenda" style="margin-left: 350px;">
+
+    </section>
+    <!--table id="tabladealumnos" class="paraborrar">
+
+    </table-->
+<button type="button" class="btn" id="VolverAMantenimiento2">Volver a la pagina de mantenimiento de clases</button>
+
 </main>
     <!--script type="module" src="../Javascrips/javascripts_mantenimiento_agenda_firestore.js"> </script-->
     <script type="module" src="../Javascrips/javascripts_mantenimiento_agenda.js"> </script>
