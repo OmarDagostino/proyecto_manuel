@@ -100,7 +100,7 @@
             </form>
 
             <br>
-            <form action="/action_page.php" method="post">
+            <form class="despliegue_de_la_agenda" action="/action_page.php" method="post">
                 <label for="mesyanio"> Elegir mes y año:</label> 
                 <br>
                 <div id="xr1">
@@ -109,7 +109,7 @@
                 <br>
                 <input  type="button" id="actualizarMMyAA" value="Ver días con clases disponibles"> 
             </form>
-          <div id="mesyaniodesplegados">
+          <div id="mesyaniodesplegados" class="despliegue_de_la_agenda">
                 Mes del año
           </div>
           <div id="mensaje_de_bienvenida">
@@ -149,11 +149,10 @@
             </p>
           </div>
           
-        
-        <h3 id="titulo_de_la_agenda">
+        <h3 id="titulo_de_la_agenda" class="despliegue_de_la_agenda">
                 Agenda de : 
         </h3>
-        <div id="mes_calendario">
+        <div id="mes_calendario" class="despliegue_de_la_agenda">
             <table >
                 <tr>
                     <th style="width:14.3%"> Dom </th>
@@ -220,17 +219,17 @@
                 </tr>
             </table>
         </div>
-        <div id="explica_la_reserva">
+        <div id="explica_la_reserva" class="despliegue_de_la_agenda">
             <p id="dias_ocupados">  </p>
             <p id="di_ocu"> Sin disponibilidad </p>
             <p id="dias_con_disponibilidad">  </p> 
             <p id="di_dis"> Hay horarios disponibles </p>
-            </div>               
+        </div>               
     
-    <p class="negrita" id="haz_click"> Haz click sobre el dia a agendar</p>
+    <p class="negrita" id="haz_click" class="despliegue_de_la_agenda"> Haz click sobre el dia que quieras agendar</p>
         
        
-     <div>
+     <div class="despliegue_de_la_agenda">
         <div class="formulario-popup" id="miformulario">
             <form action="/action_page.php" class="formulario-container">
                 <h3 id="titu-agenda">
@@ -367,7 +366,7 @@
                     </p>
                 </div>
                 <div id="horario-6" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h6-rango">
                         Comienzo a las 06hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -393,7 +392,7 @@
                     </p>
                 </div>
                 <div id="horario-7" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h7-rango">
                         Comienzo a las 07hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -419,7 +418,7 @@
                     </p>
                 </div>
                 <div id="horario-8" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h8-rango">
                         Comienzo a las 08hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -445,7 +444,7 @@
                     </p>
                 </div>
                 <div id="horario-9" class="horario-disponible">
-                    <p id="h1-rango">
+                    <p id="h9-rango">
                         Comienzo a las 09hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -471,7 +470,7 @@
                     </p>
                 </div>
                 <div id="horario-10" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h10-rango">
                         Comienzo a las 10hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -497,7 +496,7 @@
                     </p>
                 </div>
                 <div id="horario-11" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h11-rango">
                         Comienzo a las 11hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -523,7 +522,7 @@
                     </p>
                 </div>
                 <div id="horario-12" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h12-rango">
                         Comienzo a las 12hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -549,7 +548,7 @@
                     </p>
                 </div>
                 <div id="horario-13" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h13-rango">
                         Comienzo a las 13hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -569,13 +568,13 @@
                     <p class="mensaje-adicional" style="width:600px;">
                         <input  id="mensaje-13" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-13">
                     </p>
-                    <p class="agendar" id="check-13" >
+                    <p class="agendar">
                         <label id="check-13" for="check-13"> agendar </label>
                         <input type="checkbox" name="check-13" value="2">
                     </p>
                 </div>
                 <div id="horario-14" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h14-rango">
                         Comienzo a las 14hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -601,7 +600,7 @@
                     </p>
                 </div>
                 <div id="horario-15" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h15-rango">
                         Comienzo a las 15hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -627,7 +626,7 @@
                     </p>
                 </div>
                 <div id="horario-16" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h16-rango">
                         Comienzo a las 16hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -653,7 +652,7 @@
                     </p>
                 </div>
                 <div id="horario-17" class="horario-disponible">
-                    <p id="h1-rango">
+                    <p id="h17-rango">
                         Comienzo a las 17hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -679,7 +678,7 @@
                     </p>
                 </div>
                 <div id="horario-18" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h18-rango">
                         Comienzo a las 18hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -705,7 +704,7 @@
                     </p>
                 </div>
                 <div id="horario-19" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h19-rango">
                         Comienzo a las 19hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -731,7 +730,7 @@
                     </p>
                 </div>
                 <div id="horario-20" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h20-rango">
                         Comienzo a las 20hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -757,7 +756,7 @@
                     </p>
                 </div>
                 <div id="horario-21" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h21-rango">
                         Comienzo a las 21hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -783,7 +782,7 @@
                     </p>
                 </div>
                 <div id="horario-22" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h22-rango">
                         Comienzo a las 22hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -809,7 +808,7 @@
                     </p>
                 </div>
                 <div id="horario-23" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h23-rango">
                         Comienzo a las 23hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -835,7 +834,7 @@
                     </p>
                 </div>
                 <div id="horario-24" class="horario-disponible">
-                    <p id="h2-rango">
+                    <p id="h24-rango">
                         Comienzo a las 24hs disponible
                     </p>
                     <p class="dura" style="width:20px;">
@@ -866,6 +865,124 @@
             </form>
         </div>
     </div>
+    <div class="despliegue_de_la_agenda" id="proximas_clases">
+        <strong style="margin-left: 40px;">
+            Próximas clases agendadas
+        </strong>
+        <table id="tabla_de_clases">
+            <thead>
+                <tr>
+                    <th style="width: 100px;">
+                        Fecha
+                    </th>
+                    <th style="width: 40px;">
+                        Hora
+                    </th>
+                    <th style="width: 80px;">
+                        Duración
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="claseFecha1" >
+                    1
+                </td>
+                <td id="claseHora1">
+                    2
+                </td>
+                <td id="claseDuracion1" >
+                    3
+                </td>
+                
+            </tr>
+            <tr>
+                <td id="claseFecha2">
+                    4
+                </td>
+                <td id="claseHora2">
+                    5
+                </td>
+                <td id="claseDuracion2">
+                    6
+                </td>
+            </tr>
+            <tr>
+                <td id="claseFecha3">
+                    7
+                </td>
+                <td id="claseHora3">
+                    8
+                </td>
+                <td id="claseDuracion3">
+               9     
+                </td>
+               
+            </tr>
+            <tr>
+                <td id="claseFecha4">
+                    10
+                </td>
+                <td id="claseHora4">
+                    11
+                </td>
+                <td id="claseDuracion4">
+                    12
+                </td>
+                
+            </tr>
+            <tr>
+                <td id="claseFecha5">
+
+                </td>
+                <td id="claseHora5">
+
+                </td>
+                <td id="claseDuracion5">
+
+                </td>
+                
+            </tr>
+            <tr>
+                <td id="claseFecha6">
+
+                </td>
+                <td id="claseHora6">
+
+                </td>
+                <td id="claseDuracion6">
+
+                </td>
+                
+            </tr>
+            <tr>
+                <td id="claseFecha7">
+
+                </td>
+                <td id="claseHora7">
+
+                </td>
+                <td id="claseDuracion7">
+
+                </td>
+            </tr>
+            <tr>
+                <td id="claseFecha8">
+
+                </td>
+                <td id="claseHora8">
+
+                </td>
+                <td id="claseDuracion8">
+
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+    </div>
+   
 </main>        
     <script type="module" src="../Javascrips/manueljs.js"> </script>
 </body>

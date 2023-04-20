@@ -510,6 +510,7 @@ let clases_del_alumno
 let arrayClases = []
 async function verAgendaAlumno (mail_solicitado, futuro)
 {
+  arrayClases.splice(0, arrayClases.length)
   const fechaActual = new Date()
   let mes_de_hoy
   let dia_de_hoy
