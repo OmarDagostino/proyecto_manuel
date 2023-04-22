@@ -19,8 +19,15 @@ import {arrayClases} from "./javascripts_mantenimiento_agenda_firestore.js";
 // *******************************************************************************************
 const log_registrarse = document.getElementById("registrate");
 log_registrarse.addEventListener('click', openForm );
-const log_nuevo = document.getElementById("NuevoUsuario");
-log_nuevo.addEventListener('click', registrarNuevoUsuario);
+//const log_nuevo = document.getElementById("myFormx");
+//log_nuevo.addEventListener('submit', registrarNuevoUsuario);
+const  log_nuevo=document.getElementById("myFormx");
+log_nuevo.addEventListener('submit', function(event) 
+{
+  event.preventDefault(); 
+  registrarNuevoUsuario();
+});
+
 const log_close = document.getElementById("cerrarUsuario");
 log_close.addEventListener('click', closeForm );
 const log_entrar = document.getElementById("boton_de_login");
@@ -336,13 +343,20 @@ function closeForm()
   document.getElementById("myForm").style.display = "none";
   document.getElementById("mail_ya_registrado").style.display = "none";
   document.getElementById("los_mails_no_coinciden").style.display = "none";
+  let form = document.getElementById('myFormx');
+  form.reset ()
 }
 //**********************************************************
 // registrar un nuevo usuario
 //**********************************************************
 async function registrarNuevoUsuario ()
 {
-  let nuevoEmail = document.getElementsByName('emailN')[0].value;
+  let form = document.getElementById('myFormx');
+  let formData = new FormData(form);
+  let nuevoEmail=formData.get("emailN")
+  let name_alu=formData.get("nombre")
+  let ape_alu=formData.get("apellido")
+  let tel_alu=formData.get("telefono")
   await buscarAlumnoPorEmail(nuevoEmail);
   if (existe_alumno)
   {
@@ -354,12 +368,17 @@ async function registrarNuevoUsuario ()
   }
   else
   {
-    let name_alu = document.getElementById("name1").value;
-    let ape_alu = document.getElementById("surname1").value;
-    let tel_alu = document.getElementById("phone1").value;
     agregarUnAlumno (nuevoEmail, name_alu, ape_alu, tel_alu);
     document.getElementsByName('correo_electronico')[0].value=nuevoEmail;
     logueado=true;
+    document.getElementsByClassName("despliegue_de_la_agenda")[0].style.display=("block");
+    document.getElementsByClassName("despliegue_de_la_agenda")[1].style.display=("block");
+    document.getElementsByClassName("despliegue_de_la_agenda")[2].style.display=("block");
+    document.getElementsByClassName("despliegue_de_la_agenda")[3].style.display=("block");
+    document.getElementsByClassName("despliegue_de_la_agenda")[4].style.display=("block");
+    document.getElementsByClassName("despliegue_de_la_agenda")[5].style.display=("block");
+    document.getElementsByClassName("despliegue_de_la_agenda")[6].style.display=("block");
+    document.getElementById("haz_click").style.display=("block");
     let nomalu=name_alu;
     let apealu=ape_alu;
     let mensajelogin=("Bienvenido "+ nomalu + " " + apealu + " ! , ya puedes agendar tu clase");
@@ -368,6 +387,68 @@ async function registrarNuevoUsuario ()
     document.getElementById("myForm").style.display = "none";
     document.getElementById("mail_ya_registrado").style.display = "none";
     document.getElementById("los_mails_no_coinciden").style.display = "none";
+    const ultimoemail = JSON.stringify (mailadress);
+    localStorage.setItem('lastmail', ultimoemail); 
+    form.reset ()   
+    // 
+    // actualizar y desplegar nuevamente la tabla de proximas clases agendadas
+    // 
+    await verAgendaAlumno (mailadress,"futuro");
+    for (let jis=0; jis<8;jis++)
+    {
+      if (arrayClases.length>jis) 
+      {
+        let ji=jis+1;
+        let ddAdesp;
+        let mmAdesp;
+        let aaaaAdesp;
+        aaaaAdesp=arrayClases[jis].fecha_alumno.substr(0, 4);
+        mmAdesp=arrayClases[jis].fecha_alumno.substr(5, 2);
+        ddAdesp=arrayClases[jis].fecha_alumno.substr(8, 2);
+        const fechaAdesp = (ddAdesp+"/"+mmAdesp+"/"+aaaaAdesp);
+        const fechaDOM=("claseFecha"+ji);
+        document.getElementById(fechaDOM).innerHTML=fechaAdesp;
+        document.getElementById(fechaDOM).style.display="inline-block";
+        document.getElementById(fechaDOM).style.width="100px"; 
+        const horaDOM=("claseHora"+ji);
+        document.getElementById(horaDOM).innerHTML=arrayClases[jis].hora_alumno;
+        document.getElementById(horaDOM).style.display="inline-block";
+        document.getElementById(horaDOM).style.width="40px";
+        const tipoDOM=("claseDuracion"+ji);
+        document.getElementById(tipoDOM).innerHTML=(arrayClases[jis].duracion_alumno+" min.");
+        document.getElementById(tipoDOM).style.display="inline-block"; 
+        document.getElementById(tipoDOM).style.width="80px"; 
+      }
+      else 
+      {
+        let ji=jis+1
+        const fechaDOM=("claseFecha"+ji);
+        const horaDOM=("claseHora"+ji);
+        const tipoDOM=("claseDuracion"+ji);
+        document.getElementById(horaDOM).innerHTML= " ";
+        document.getElementById(horaDOM).style.display= "none";
+        document.getElementById(tipoDOM).innerHTML= " ";
+        document.getElementById(tipoDOM).style.display= "none";
+        if (jis==0) 
+        {
+          document.getElementById(fechaDOM).innerHTML= "No hay clases agendadas";
+          document.getElementById(fechaDOM).style.display= "inline-block";
+        }
+        else
+        {
+          document.getElementById(fechaDOM).innerHTML= " ";
+          document.getElementById(fechaDOM).style.display= "none";
+        }
+      }
+      document.getElementsByClassName("despliegue_de_la_agenda")[0].style.display=("block");
+      document.getElementsByClassName("despliegue_de_la_agenda")[1].style.display=("block");
+      document.getElementsByClassName("despliegue_de_la_agenda")[2].style.display=("block");
+      document.getElementsByClassName("despliegue_de_la_agenda")[3].style.display=("block");
+      document.getElementsByClassName("despliegue_de_la_agenda")[4].style.display=("block");
+      document.getElementById("mensaje_de_bienvenida").style.display=("block");
+      document.getElementsByClassName("despliegue_de_la_agenda")[6].style.display=("block");
+      document.getElementById("haz_click").style.display=("block");
+    }
   }
 }
 //*********************************************************
@@ -522,18 +603,25 @@ async function actualizarAgenda ()
     if (arrayClases.length>jis) 
     {
       let ji=jis+1;
+      let ddAdesp;
+      let mmAdesp;
+      let aaaaAdesp;
+      aaaaAdesp=arrayClases[jis].fecha_alumno.substr(0, 4);
+      mmAdesp=arrayClases[jis].fecha_alumno.substr(5, 2);
+      ddAdesp=arrayClases[jis].fecha_alumno.substr(8, 2);
+      const fechaAdesp = (ddAdesp+"/"+mmAdesp+"/"+aaaaAdesp);
       const fechaDOM=("claseFecha"+ji);
-        document.getElementById(fechaDOM).innerHTML=arrayClases[jis].fecha_alumno;
-        document.getElementById(fechaDOM).style.display="inline-block";
-        document.getElementById(fechaDOM).style.width="100px"; 
-        const horaDOM=("claseHora"+ji);
-        document.getElementById(horaDOM).innerHTML=arrayClases[jis].hora_alumno;
-        document.getElementById(horaDOM).style.display="inline-block";
-        document.getElementById(horaDOM).style.width="40px";
-        const tipoDOM=("claseDuracion"+ji);
-        document.getElementById(tipoDOM).innerHTML=(arrayClases[jis].duracion_alumno+" min.");
-        document.getElementById(tipoDOM).style.display="inline-block"; 
-        document.getElementById(tipoDOM).style.width="80px"; 
+      document.getElementById(fechaDOM).innerHTML=fechaAdesp;
+      document.getElementById(fechaDOM).style.display="inline-block";
+      document.getElementById(fechaDOM).style.width="100px"; 
+      const horaDOM=("claseHora"+ji);
+      document.getElementById(horaDOM).innerHTML=arrayClases[jis].hora_alumno;
+      document.getElementById(horaDOM).style.display="inline-block";
+      document.getElementById(horaDOM).style.width="40px";
+      const tipoDOM=("claseDuracion"+ji);
+      document.getElementById(tipoDOM).innerHTML=(arrayClases[jis].duracion_alumno+" min.");
+      document.getElementById(tipoDOM).style.display="inline-block"; 
+      document.getElementById(tipoDOM).style.width="80px"; 
     }
     else 
     {
@@ -967,8 +1055,15 @@ async function logIn ()
       if (arrayClases.length>jis) 
       {
         let ji=jis+1;
+        let ddAdesp;
+        let mmAdesp;
+        let aaaaAdesp;
+        aaaaAdesp=arrayClases[jis].fecha_alumno.substr(0, 4);
+        mmAdesp=arrayClases[jis].fecha_alumno.substr(5, 2);
+        ddAdesp=arrayClases[jis].fecha_alumno.substr(8, 2);
+        const fechaAdesp = (ddAdesp+"/"+mmAdesp+"/"+aaaaAdesp);
         const fechaDOM=("claseFecha"+ji);
-        document.getElementById(fechaDOM).innerHTML=arrayClases[jis].fecha_alumno;
+        document.getElementById(fechaDOM).innerHTML=fechaAdesp;
         document.getElementById(fechaDOM).style.display="inline-block";
         document.getElementById(fechaDOM).style.width="100px"; 
         const horaDOM=("claseHora"+ji);
