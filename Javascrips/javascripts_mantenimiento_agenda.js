@@ -16,6 +16,8 @@ const log_desagendar = document.getElementById("desagendar_clases");
 log_desagendar.addEventListener('click', desagendarClases );
 const log_ver = document.getElementById("ver_agenda");
 log_ver.addEventListener('click', verAgenda );
+const log_ver_agenda = document.getElementById("verCalendario");
+log_ver_agenda.addEventListener('click', verCalendario );
 const log_inactivar = document.getElementById("inactivar_alumno");
 log_inactivar.addEventListener('click', inactivarAlumno );
 const log_reactivar = document.getElementById("reactivar_alumno");
@@ -49,12 +51,14 @@ import {inactivarUnAlumno} from "./javascripts_mantenimiento_agenda_firestore.js
 import {reactivarUnAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {consultarAlumnos} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {verAgendaAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {consultarAgenda} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {datos} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {existe_agenda} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {existe_alumno} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {datosAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {arrayAlumnos} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {arrayClases} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {disponibilidad} from "./javascripts_mantenimiento_agenda_firestore.js";
 // *******************************************************************************
 // validar fecha y hora
 // ******************************************************************************** 
@@ -614,6 +618,186 @@ async function consularAgendaDeUnAlumno ()
     }
 }
 // ****************************************************************************************
+// obtener y desplegar el calendario de un mes con el resumen de cada dia
+// **************************************************************************************** 
+async function verCalendario ()
+{
+    const log_volver_m = document.getElementById("VolverAMantenimiento3");
+    log_volver_m.addEventListener('click', volverAMantenimiento3);  
+    document.getElementsByTagName("main")[0].style.display=("none");
+    document.getElementsByTagName("main")[4].style.display=("block");
+    let mesyaniocale
+    mesyaniocale = document.getElementById("mmaaaa").value
+    let mes
+    let anio
+    mes = mesyaniocale.substr(5,2)
+    anio= mesyaniocale.substr(0,4)
+    await crearCalendarioMensual (mes, anio)
+}
+// *****************************************************
+// crear un calendario mensual
+// *****************************************************
+let calendario_mensual= [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]];
+async function crearCalendarioMensual (mes, anio)
+{
+  let aaaa = anio;
+  let mm = mes;
+  const aaaaymm = (aaaa+"-"+mm);
+  await consultarAgenda (aaaaymm);
+  //
+  //llenar el mes y año a desplegar en el titulo del calendario
+  //
+  const mesdelcalendariodesplegado = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+  const mesyaniodelcalendariodesplegado = (mesdelcalendariodesplegado[mes-1]+ " de "+ anio);
+  document.getElementById("mesADesplegar").innerHTML=mesyaniodelcalendariodesplegado; 
+  //
+  // determinar el numero del ultimo dia del mes
+  //
+  let semana = [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]];
+  let ultimos_dias = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  let ultimo_dia = 0;
+  let biciesto = anio % 4;
+  if (biciesto==0) 
+  { 
+    biciesto=1;
+  } 
+  else 
+  {
+    biciesto=0;
+  }
+  if (mes==2)
+  {
+    ultimo_dia = ultimos_dias [1] +biciesto;
+  } 
+  else 
+  {
+    ultimo_dia = ultimos_dias [mes-1];
+  }
+  //
+  // determinar que dia de la semana cae el primer dia del mes
+  //
+  const d = new Date ( anio+"-"+ mes +"-"+"01" );
+  let primer_dia = d.getDay ();
+  let f=primer_dia+1;
+  let numero_de_dia_del_mes = 0;
+  let i=0;
+  //
+  // blanquear el background de la primera semana 
+  //
+  for (i=1; i<=7; i++)
+  {
+    document.getElementById("dia1"+i).style.backgroundColor="white";
+  }
+  //
+  // calcular las clases agendadas y disponibles por dia
+  //
+  let dias_con_clases_agendadas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let dias_con_clases_disponibles = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  for  (let w=0; w<=30; w++)
+  {
+    let dia_con_disponibilidad = 0;
+    let dia_con_agendas = 0
+    for (let j=0; j<=23; j++)
+    {
+      if (disponibilidad [w] [j] == 1)
+      {
+        dia_con_disponibilidad++
+      }
+      if (disponibilidad [w] [j] == 2)
+      {
+        dia_con_agendas++
+      }
+    }
+    dias_con_clases_agendadas[w]=dia_con_agendas;
+    dias_con_clases_disponibles[w]=dia_con_disponibilidad
+  }
+  //
+  // llenar las semanas con los numeros de dia y modificar DOM con disponibilidad y eventos
+  //
+  for (i=0; i<=5 ; i++)
+  {
+    let j
+    j=i+1
+    do
+    {
+      if (f==7) 
+      {
+        f=0;
+      }
+      let g=f+1;    
+      if (numero_de_dia_del_mes<= 31 && dias_con_clases_agendadas [numero_de_dia_del_mes] >= 1 && dias_con_clases_disponibles[numero_de_dia_del_mes]>=1) 
+      {
+        document.getElementById("dia"+j+g).style.backgroundColor="lightyellow";           
+      }
+      else if (numero_de_dia_del_mes<= 31 && dias_con_clases_agendadas [numero_de_dia_del_mes] == 0 && dias_con_clases_disponibles[numero_de_dia_del_mes]==0)
+      {                  
+        document.getElementById("dia"+j+g).style.backgroundColor="white"; 
+      }
+      else if (numero_de_dia_del_mes<= 31 && dias_con_clases_agendadas [numero_de_dia_del_mes] == 0 && dias_con_clases_disponibles[numero_de_dia_del_mes]>=1)
+      {                  
+        document.getElementById("dia"+j+g).style.backgroundColor="pink"; 
+      }
+      else if (numero_de_dia_del_mes<= 31 && dias_con_clases_agendadas [numero_de_dia_del_mes] >= 1 && dias_con_clases_disponibles[numero_de_dia_del_mes]==0)
+      {                  
+        document.getElementById("dia"+j+g).style.backgroundColor="yellowgreen"; 
+      } 
+      numero_de_dia_del_mes++;
+      if (numero_de_dia_del_mes <= ultimo_dia) 
+      {
+        let ndddm;
+        ndddm = numero_de_dia_del_mes-1;
+        if (dias_con_clases_agendadas [ndddm] == 0 && dias_con_clases_disponibles[ndddm]==0)
+        {
+            semana [i] [f] = numero_de_dia_del_mes;
+        }
+        else 
+        {
+            let status;
+            status = (numero_de_dia_del_mes+" / "+dias_con_clases_agendadas[ndddm]+" / "+dias_con_clases_disponibles[ndddm]);
+            semana [i] [f] = status;
+        }
+      }
+     
+      f++;
+    }
+    while (f<=6)
+  }
+  calendario_mensual=semana
+  // ************************************************************
+  // modificar el DOM con el calendario del mes solicitado
+  // ************************************************************
+  let m;
+  let j;
+  for (m=0;m<6;m++) 
+  { 
+    for (j=0; j<7;j++)
+    {
+      let x=m+1;
+      let y=j+1;
+      let alfam=x.toString ();
+      let alfaj=y.toString ();
+      let dia="dia"+alfam+alfaj;
+      if (calendario_mensual[m][j]==0) 
+      {
+        document.getElementById(dia).innerHTML="  ";
+      } 
+      else 
+      {
+        document.getElementById(dia).innerHTML=calendario_mensual[m][j];
+      }
+    } 
+  }
+  if (calendario_mensual [5][0]==' ') 
+  {
+    let ultima_s = document.getElementById('ultima_semana'); ultima_s.style.cssText ='display:none'; 
+  }
+  else 
+  {
+    let ultima_s = document.getElementById('ultima_semana'); 
+    ultima_s.style.cssText ="width: 600px ; text-align: center;" ;
+  }
+}
+// ****************************************************************************************
 // volver a la pagina de mantenimiento de agenda cerrando las clases del alumno desplegadas
 // **************************************************************************************** 
 function volverAMantenimiento2 ()
@@ -626,4 +810,13 @@ function volverAMantenimiento2 ()
     DOMaborrara.remove ();  
     document.getElementsByTagName("main")[0].style.display=("block");
     document.getElementsByTagName("main")[3].style.display=("none");
+}
+// ****************************************************************************************
+// volver a la pagina de mantenimiento de agenda 
+// **************************************************************************************** 
+function volverAMantenimiento3 ()
+{
+    
+    document.getElementsByTagName("main")[0].style.display=("block");
+    document.getElementsByTagName("main")[4].style.display=("none");
 }

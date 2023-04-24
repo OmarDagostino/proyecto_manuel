@@ -313,13 +313,35 @@ let logueado = false;
 // ***************************************************
 let dia_elegido;
 let dia_e = 0;
-let mailadress;
+let mailadress; 
+let Dia_de_Hoy;  
+let mes_de_hoy;
 let today= new Date ();
+let dia_de_ahora= today.getDate ();
+dia_de_ahora++
+if (dia_de_ahora<10)
+{
+  Dia_de_Hoy = ("0"+dia_de_ahora);
+}
+else
+{
+  Dia_de_Hoy = dia_de_ahora;
+}
+let anio = today.getFullYear ();
 let mes = today.getMonth ();
 mes++;
+if (mes<10) 
+{
+  mes_de_hoy =("0"+mes)
+}
+else
+{
+  mes_de_hoy=mes
+}
+const fecha_de_hoy = (anio+mes_de_hoy+Dia_de_Hoy);
 let mesyaniodelcalendariodesplegado;
 const mesdelcalendariodesplegado = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-let anio = today.getFullYear ();
+
 let calendario_mensual= [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]];
 crearCalendarioMensual (mes, anio);
 //********************************************************
@@ -764,7 +786,27 @@ async function crearCalendarioMensual (mes, anio)
       }
       let g=f+1;
       let galfa=g.toString();
-      if (numero_de_dia_del_mes<= 31 && dias_con_clases [numero_de_dia_del_mes] == 1) 
+      let fechaAMostrar;
+      let mesAMostrar;
+      let diaAMostrar;
+      if (mes<10)
+      {
+        mesAMostrar=("0"+mes);
+      }
+      else
+      {
+        mesAMostrar=mes
+      }
+      if (numero_de_dia_del_mes<10)
+      {
+        diaAMostrar=("0"+numero_de_dia_del_mes);
+      }
+      else
+      {
+        diaAMostrar=numero_de_dia_del_mes
+      }
+      fechaAMostrar = (anio+mesAMostrar+diaAMostrar)
+      if (numero_de_dia_del_mes<= 31 && dias_con_clases [numero_de_dia_del_mes] == 1 && fechaAMostrar>fecha_de_hoy) 
       {
         document.getElementById("dia"+j+g).style.backgroundColor="greenyellow"; 
         const diaalfa1 = ("dia"+jalfa+galfa);

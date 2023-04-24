@@ -49,6 +49,10 @@ h3
 {
     display:none
 }
+#main5
+{
+    display:none
+}
 .columna1
 {
     width: 30px;
@@ -82,7 +86,11 @@ h3
     width:  325px;
 }
 table, th, td 
-  {
-    border: 1px solid black;
-    text-align: center;
-  }
+{
+border: 1px solid black;
+text-align: center;
+}
+#mes_calendario
+{
+    margin-left: 400px;
+}
