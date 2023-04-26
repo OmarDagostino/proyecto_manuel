@@ -19,15 +19,12 @@ import {arrayClases} from "./javascripts_mantenimiento_agenda_firestore.js";
 // *******************************************************************************************
 const log_registrarse = document.getElementById("registrate");
 log_registrarse.addEventListener('click', openForm );
-//const log_nuevo = document.getElementById("myFormx");
-//log_nuevo.addEventListener('submit', registrarNuevoUsuario);
 const  log_nuevo=document.getElementById("myFormx");
 log_nuevo.addEventListener('submit', function(event) 
 {
   event.preventDefault(); 
   registrarNuevoUsuario();
 });
-
 const log_close = document.getElementById("cerrarUsuario");
 log_close.addEventListener('click', closeForm );
 const log_entrar = document.getElementById("boton_de_login");
@@ -379,6 +376,11 @@ async function registrarNuevoUsuario ()
   let name_alu=formData.get("nombre")
   let ape_alu=formData.get("apellido")
   let tel_alu=formData.get("telefono")
+  let mailenminuscula
+  mailenminuscula= nuevoEmail.toLowerCase ()
+  nuevoEmail=mailenminuscula
+  mailenminuscula= document.getElementsByName('emailN1')[0].value.toLowerCase ()
+  document.getElementsByName('emailN1')[0]= mailenminuscula
   await buscarAlumnoPorEmail(nuevoEmail);
   if (existe_alumno)
   {
@@ -485,11 +487,13 @@ function openForm1(dia_elegido)
     dia=("dia"+dia_elegido);
     let dia_a_desplegar = (document.getElementById(dia).innerHTML + " de " + mesyaniodelcalendariodesplegado);
     document.getElementById("titu-agenda").innerHTML = ("Agenda del día " + dia_a_desplegar);
+    
     for (let i=0; i<=23; i++)
     {
       let indice_de_dia = parseInt(document.getElementById(dia).innerHTML)-1;
       let imas1=i+1;
-      if (disponibilidad [indice_de_dia] [i] == 0 ) 
+      console.log (disponibilidad[indice_de_dia] [9] )
+      if (disponibilidad [indice_de_dia] [i] !== 1 && disponibilidad [indice_de_dia] [i] !== 2 ) 
       {
         document.getElementById("horario-"+imas1).style.display="none";
       }
@@ -1066,12 +1070,17 @@ function actualizarMesyAnioElegidos ()
 //**********************************************************
 async function logIn ()
 {
+  document.getElementById("loader").style.display='block';
   document.getElementById("mensaje_de_bienvenida").style.display=("none");
   document.getElementById("mensaje_de_mail_no_registrado").style.display=("none");
   document.getElementById("mensaje_de_hacer_logoff").style.display=("none");
   document.getElementById("mensaje_de_obligacion_de_login").style.display=("none");
   document.getElementById("mensaje_de_mail_inactivado").style.display=("none");    
   mailadress = document.getElementsByName('correo_electronico')[0].value;
+  let mailenminuscula
+  mailenminuscula=mailadress.toLowerCase ()
+  mailadress=mailenminuscula
+  console.log (mailadress)
   await buscarAlumnoPorEmail(mailadress);
   if (logueado) 
   { 
@@ -1157,7 +1166,8 @@ async function logIn ()
     document.getElementById("mensaje_de_bienvenida").style.display=("block");
     const ultimoemail = JSON.stringify (mailadress);
     localStorage.setItem('lastmail', ultimoemail);
-  }   
+  } 
+  document.getElementById("loader").style.display='none';  
 }
 //**********************************************************
 // hacer logoff del usuario

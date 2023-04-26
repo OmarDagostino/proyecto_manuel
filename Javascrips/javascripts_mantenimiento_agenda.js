@@ -161,12 +161,16 @@ async function  agendarClases ()
         await obtenerAgenda (fechaYHora);
         if (existe_agenda && datos.docData.disponibilidad == "1") 
         {
+            let mailenminuscula
+            let mails
+            mails=document.getElementById("email-a").value
+            mailenminuscula=mails.toLowerCase ()
             agendar_una_clase 
             (
                 fechaYHora,
                 document.getElementById("duracion-a").value,
                 document.getElementById("tema-a").value,
-                document.getElementById("email-a").value,
+                mailenminuscula,
                 fecha,
                 hora, 
                 "clase agendada por el profesor" 
@@ -244,6 +248,9 @@ async function verAgenda ()
     validarFechaYHora (fecha, hora);
     if (!tiene_error) 
     {
+        console.log (document.getElementById("loader").style.display);
+        document.getElementById("loader").style.display="block";
+        console.log (document.getElementById("loader").style.display);
         fecha_a_visualizar = document.getElementsByName("fecha-v")[0].value;
         document.getElementsByTagName("main")[0].style.display=("none");
         document.getElementsByTagName("main")[1].style.display=("inline");
@@ -309,6 +316,7 @@ async function verAgenda ()
             }   
         }
     }
+    document.getElementById("loader").style.display="none";
     const myForm = document.getElementById("miformulario");
     myForm.reset();
 }
@@ -327,6 +335,9 @@ async function inactivarAlumno ()
     }
     else 
     {
+        let mailenminuscula
+        mailenminuscula=correo_i.toLowerCase ()
+        correo_i=mailenminuscula
         await obtenerAlumno (correo_i);
         if (existe_alumno) 
         { 
@@ -372,6 +383,9 @@ async function reactivarAlumno ()
     }
     else
     { 
+        let mailenminuscula
+        mailenminuscula=correo_r.toLowerCase ()
+        correo_r=mailenminuscula
         await obtenerAlumno (correo_r);
         if (existe_alumno) 
         { 
@@ -539,6 +553,9 @@ async function consularAgendaDeUnAlumno ()
     const log_volver_m = document.getElementById("VolverAMantenimiento2");
     log_volver_m.addEventListener('click', volverAMantenimiento2);  
     let alumno_a_consultar = document.getElementById("correo_electronico_va").value;
+    let mailenminuscula;
+        mailenminuscula=alumno_a_consultar.toLowerCase ();
+        alumno_a_consultar=mailenminuscula;
     if (alumno_a_consultar == "")   
     {
         document.getElementById("mensaje").innerHTML = ("Debes ingresar un email");
@@ -548,6 +565,7 @@ async function consularAgendaDeUnAlumno ()
     } 
     else
     { 
+        alumno_a_consultar=mailenminuscula;
         await obtenerAlumno (alumno_a_consultar);
         if (existe_alumno) 
         {
