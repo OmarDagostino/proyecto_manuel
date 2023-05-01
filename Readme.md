@@ -38,7 +38,7 @@ Cuando se hace LogIn se desplegaran las funciones de mantenimiento de la agenda,
 
 El proyecto se realizó en HTML, CSS y Javascript. Se utiliza la base de datos gratuita de Firestore (en modo de prueba). 
 
-3) Temas Pendientes de la version 6.3
+3) Temas Pendientes de la version 6.5
 
     a) crear la funcionalidad de un tiempo acotado (puede ser unos 10 minutos), para actualizar la agenda, luego del cual se debe forzar un log off. Durante ese tiempo ningun otro alumno podría estar agendando la clases, en cuyo caso se le informaría que debe ingresar mas tarde por estar la función ocupada por otro alumno.
     Otra alterativa a evaluar es consultar la disponibilidad inmediatamente antes de actualizar el registro de la agenda y dar un mensaje de aviso si el estado de disponible cambio, y en ese caso no actualizar.

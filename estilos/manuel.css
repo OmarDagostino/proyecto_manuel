@@ -397,6 +397,7 @@ table, th, td
   grid-row: 3/6;
   height: 20px;
   transform:translate(-76px, 43px);
+  z-index:300;
 }
 #registro_de_usuario
 {
