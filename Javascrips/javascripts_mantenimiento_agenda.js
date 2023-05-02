@@ -248,9 +248,7 @@ async function verAgenda ()
     validarFechaYHora (fecha, hora);
     if (!tiene_error) 
     {
-        console.log (document.getElementById("loader").style.display);
         document.getElementById("loader").style.display="block";
-        console.log (document.getElementById("loader").style.display);
         fecha_a_visualizar = document.getElementsByName("fecha-v")[0].value;
         document.getElementsByTagName("main")[0].style.display=("none");
         document.getElementsByTagName("main")[1].style.display=("inline");
@@ -490,9 +488,17 @@ async function consularListaAlumnos (actividad)
 // *******************************************************************************
 // hacer login con la contraseña del profesor y desplegar las funciones
 // ******************************************************************************** 
-function logIn ()
+async function logIn ()
 {
-    document.getElementById("actividades").style.display="inline-block";
+    await obtenerAlumno ("jmfalguera@gmail.com")
+    if (document.getElementById("contrasenia").value == datosAlumno.nombre)
+    {
+        document.getElementById("actividades").style.display="inline-block";
+    }
+    else 
+    {
+        alert ("contraseña incorrecta, vuelve a intentarlo.")
+    }
 }
 // *******************************************************************************
 // hacer log off

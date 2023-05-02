@@ -8,6 +8,8 @@ import {agendar_una_clase} from "./javascripts_mantenimiento_agenda_firestore.js
 import {desagendar_una_clase} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {consultarAgenda} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {verAgendaAlumno} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {obtenerAgenda} from "./javascripts_mantenimiento_agenda_firestore.js";
+import {datos} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {disponibilidad} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {mensaje_agendado} from "./javascripts_mantenimiento_agenda_firestore.js";
 import {duracion_agendada} from "./javascripts_mantenimiento_agenda_firestore.js";
@@ -379,8 +381,9 @@ async function registrarNuevoUsuario ()
   let mailenminuscula
   mailenminuscula= nuevoEmail.toLowerCase ()
   nuevoEmail=mailenminuscula
+  mailadress=mailenminuscula
   mailenminuscula= document.getElementsByName('emailN1')[0].value.toLowerCase ()
-  document.getElementsByName('emailN1')[0]= mailenminuscula
+  document.getElementsByName('emailN1')[0].value= mailenminuscula
   await buscarAlumnoPorEmail(nuevoEmail);
   if (existe_alumno)
   {
@@ -492,7 +495,6 @@ function openForm1(dia_elegido)
     {
       let indice_de_dia = parseInt(document.getElementById(dia).innerHTML)-1;
       let imas1=i+1;
-      console.log (disponibilidad[indice_de_dia] [9] )
       if (disponibilidad [indice_de_dia] [i] !== 1 && disponibilidad [indice_de_dia] [i] !== 2 ) 
       {
         document.getElementById("horario-"+imas1).style.display="none";
@@ -550,11 +552,13 @@ function closeForm1()
     document.getElementsByClassName("despliegue_de_la_agenda")[6].style.display=("block");
     document.getElementById("haz_click").style.display=("block");
 }
-//***************************************************************
+//****************************************************************
 // actualizar agenda del dia elegido
 //****************************************************************
+let errorAlActualizar
 async function actualizarAgenda ()
 {
+  errorAlActualizar=false
   for (let i=1; i<=24; i++)
   {
     if (document.getElementsByName("check-"+i) [0].checked && mail_agendados[dia_e-1][i-1]==mailadress)
@@ -612,12 +616,24 @@ async function actualizarAgenda ()
       }
       const fechayhora_a_agendar = (anio+"-"+alfames+"-"+alfadia+"-"+i);
       const fechadelaagenda = (anio+"-"+alfames+"-"+alfadia);
-      await agendar_una_clase (fechayhora_a_agendar,duracion_agendada[dia_e-1][i-1],tema_agendado[dia_e-1][i-1], mail_agendados[dia_e-1][i-1], fechadelaagenda , i, mensaje_agendado[dia_e-1][i-1] );
+      await obtenerAgenda (fechayhora_a_agendar);
+      if (datos.docData.disponibilidad=="1") 
+      {
+        await agendar_una_clase (fechayhora_a_agendar,duracion_agendada[dia_e-1][i-1],tema_agendado[dia_e-1][i-1], mail_agendados[dia_e-1][i-1], fechadelaagenda , i, mensaje_agendado[dia_e-1][i-1] );
+      }
+      else 
+      {
+        errorAlActualizar=true;
+      }
     }
     document.getElementById("tema-"+i).value="0"; 
     document.getElementById("duracion-"+i).value="0" ;
     document.getElementById("mensaje-"+i).value="puedes dejar un mensaje aqui";
     document.getElementsByName("check-"+i) [0].checked=false; 
+  }
+  if (errorAlActualizar)
+  {
+    alert ("Lamentablemente la clase que quieres agendar ya no esta disponible, inteta con otra.");
   }
   document.getElementById("miformulario").style.display = "none";
   // 
@@ -1080,7 +1096,6 @@ async function logIn ()
   let mailenminuscula
   mailenminuscula=mailadress.toLowerCase ()
   mailadress=mailenminuscula
-  console.log (mailadress)
   await buscarAlumnoPorEmail(mailadress);
   if (logueado) 
   { 

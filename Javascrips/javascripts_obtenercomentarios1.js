@@ -1,9 +1,7 @@
 let mensaje1;
 let mensaje2;
 const url='./archivos_json/alumnos.json';
-
 obtenerRegistro();
-
 async function obtenerRegistro() 
 {
   try 
@@ -21,6 +19,5 @@ finally
     {
         document.getElementById("primerComentario").innerHTML=mensaje1;
         document.getElementById("segundoComentario").innerHTML=mensaje2;
-        //document.getElementById("segundoComentario").innerHTML=mensaje2;
     }
 }

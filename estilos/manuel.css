@@ -102,7 +102,7 @@ p
 }
 #foto1
 {
-  height:400px
+  height:380px
 }
 #parrafo2
 {
@@ -235,7 +235,7 @@ p
   grid-column: 2/8;
   grid-row: 3/10;
   font-family: karla;
-  font-size: 110%;
+  font-size: 90%;
   line-height: 1.2;
 }
 #revisiones_parrafos

@@ -70,7 +70,7 @@ async function crear_una_clase (fecha_y_hora_de_la_agenda)
   };
   await setDoc(doc(agendaRef, fecha_y_hora_de_la_agenda), {docData})
     .then(() => {
-      console.log("Documento creado exitosamente.");
+      //console.log("Documento creado exitosamente.");
     })
     .catch((error) => {
       console.error("Error al crear documento: ", error);
@@ -91,7 +91,7 @@ async function eliminar_una_clase (fecha_y_hora_de_la_agenda)
   let hora_agenda= fecha_y_hora_de_la_agenda.slice(11);
   await deleteDoc(doc(agendaRef, fecha_y_hora_de_la_agenda))
     .then(() => {
-      console.log("Documento eliminado exitosamente.");
+      //console.log("Documento eliminado exitosamente.");
     })
     .catch((error) => {
       console.error("Error al crear documento: ", error);
@@ -120,7 +120,7 @@ async function agendar_una_clase (fecha_y_hora_de_la_agenda,dura_a, tipo_a, emai
   };
   await updateDoc(doc(agendaRef, fecha_y_hora_de_la_agenda), {docData})
   .then(() => {
-    console.log("Documento actualizado exitosamente.");
+    //console.log("Documento actualizado exitosamente.");
   })
   .catch((error) => {
     console.error("Error al actualizar un documento: ", error);
@@ -149,7 +149,7 @@ async function desagendar_una_clase (fecha_y_hora_de_la_agenda,dura_a, tipo_a, e
   };
   await updateDoc(doc(agendaRef, fecha_y_hora_de_la_agenda), {docData})
   .then(() => {
-    console.log("Documento actualizado exitosamente.");
+    //console.log("Documento actualizado exitosamente.");
   })
   .catch((error) => {
     console.error("Error al actualizar un documento: ", error);
@@ -213,7 +213,7 @@ async function agregarUnAlumno (elmail, nombreAlu, apellidoAlu, telefonoAlu)
     telefono:telefonoAlu,
     activo:"activo"})
   .then(() => {
-    console.log("Documento actualizado exitosamente.");
+    //console.log("Documento actualizado exitosamente.");
   })
   .catch((error) => {
     console.error("Error al actualizar un documento: ", error);
@@ -231,7 +231,7 @@ async function reactivarUnAlumno (elmail)
   const docId = elmail;
   await updateDoc(doc(agendaRef, docId), {activo: "activo"})
   .then(() => {
-    console.log("Documento actualizado exitosamente.");
+    //console.log("Documento actualizado exitosamente.");
   })
   .catch((error) => {
     console.error("Error al actualizar un documento: ", error);

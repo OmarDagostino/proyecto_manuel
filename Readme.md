@@ -10,7 +10,7 @@ La trayectoria del profesor se puede apreciar en la página titulada Acerca de m
 
 Los precios de las clases se pueden ver en la página de Tarifas
 
-La pagina de contacto solo ofrece un teléfono para comunicarse (esta pendiente la funcionalidad de mail con un captcha)
+La pagina de contacto solo ofrece un teléfono para comunicarse, y se puede enviar por mail un mensaje al profesor a través del servico gratuito de Formspree (se necesita pasar el recaptcha de Google para comprobar que no es un robot el que envia el mensaje)
 
 En la página de comentarios de Alumnos se pueden ver los mensajes que le han dejado al profesor respecto de las clases y el método de enseñanza.
 
@@ -21,7 +21,7 @@ Se puede elegir el mes que se desee, para desplegar la disponibilidad de horario
 Por último, si se ingresa con el mail del profesor (esto es jmfalguera@gmail.com), que esta grabado como Administrador en la base de datos, se abrira automaticamente una pagina de mantenimiento de datos. 
 
 
-La pagina de mantenimiento de la agenda solicita una contraseña para asegurarse que administrador sea el que ingresa (todavia no es funcional este requerimiento y solo hay que hacer LogIn sin datos).
+La pagina de mantenimiento de la agenda solicita una contraseña para asegurarse que administrador sea el que ingresa (la clave que actualemente esta grabada en la base de datos es matilda190122).
 Cuando se hace LogIn se desplegaran las funciones de mantenimiento de la agenda, a saber : 
 * agregar horarios de clases
 * eliminar horarios de clases
@@ -36,13 +36,8 @@ Cuando se hace LogIn se desplegaran las funciones de mantenimiento de la agenda,
 
 2) Tecnologías utilizadas
 
-El proyecto se realizó en HTML, CSS y Javascript. Se utiliza la base de datos gratuita de Firestore (en modo de prueba). 
+El proyecto se realizó en HTML, CSS y Javascript. Se utiliza la base de datos gratuita de Firestore (en modo de prueba), también el servicio de mail gratuito de Formspree (con el recaptcha pertinente). Se utiliza archivo json para almacenar los mensajes de los alumnos y desplegarlos en casi todas las páginas. Se utiliza el localstorage para almacenar el último email que hizo logIn y lo despliega.
 
-3) Temas Pendientes de la version 6.5
 
-    a) crear la funcionalidad de un tiempo acotado (puede ser unos 10 minutos), para actualizar la agenda, luego del cual se debe forzar un log off. Durante ese tiempo ningun otro alumno podría estar agendando la clases, en cuyo caso se le informaría que debe ingresar mas tarde por estar la función ocupada por otro alumno.
-    Otra alterativa a evaluar es consultar la disponibilidad inmediatamente antes de actualizar el registro de la agenda y dar un mensaje de aviso si el estado de disponible cambio, y en ese caso no actualizar.
-    b) crear la funcionalidad de envio de mail al profesor en la pagina de contacto con un captcha (para evitar los boots automáticos) .
-    
 
 
