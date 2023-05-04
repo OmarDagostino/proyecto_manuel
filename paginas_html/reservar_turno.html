@@ -49,14 +49,16 @@
                 </div>
             </aside>
         <!--*****************************************************************
-            *                registro de nuevo usuario                                     *
+            *                registro de nuevo usuario                      *
             ***************************************************************** -->  
-        <div id="registracion">
+        <div id="registrateestilo">
             Si nunca has ingresado 
-                       
             <button class="open-button" id="registrate">Registrate</button>
+        </div>
+        <div id="registracion">
+            
+                       
             <div class="form-popup" id="myForm">
-              <!-- action="/action_page.php"--> 
                 <form class="form-container" id="myFormx">
                   
                     <label for="emailN"><b>Email</b></label>
@@ -88,17 +90,17 @@
                 <input id="boton_de_login" type="button" name="enviar" value="log in"> <br>
                 <input id="boton_de_logoff" type="button" name="salir" value="log off"> <br>
             </form>
-
             <br>
             <form class="despliegue_de_la_agenda" action="/action_page.php" method="post">
                 <label for="mesyanio"> Elegir mes y año:</label> 
                 <br>
                 <div id="xr1">
-                    <input type="month" id="mesyanio" name="mesyanio">
-                </div>
-                <br>
-                <input  type="button" id="actualizarMMyAA" value="Ver días con clases disponibles"> 
-            </form>
+                    <input type="month" id="mesyanio" name="mesyanio"> 
+                </div> 
+                <p>
+                    <input  type="button" id="actualizarMMyAA" value="Ver días con clases disponibles"> 
+                </p>
+                </form>
           <div id="mesyaniodesplegados" class="despliegue_de_la_agenda">
                 Mes del año
           </div>
@@ -810,19 +812,19 @@
         </div>
     </div>
     <div class="despliegue_de_la_agenda" id="proximas_clases">
-        <strong style="margin-left: 40px;">
+        <strong style="margin-left: 5px;">
             Próximas clases agendadas
         </strong>
         <table id="tabla_de_clases">
             <thead>
                 <tr>
-                    <th style="width: 100px;">
+                    <th class="clasef" >
                         Fecha
                     </th>
-                    <th style="width: 40px;">
+                    <th class="claseh" >
                         Hora
                     </th>
-                    <th style="width: 80px;">
+                    <th class="clased" >
                         Duración
                     </th>
                     
@@ -830,95 +832,95 @@
             </thead>
             <tbody>
             <tr>
-                <td id="claseFecha1" >
+                <td id="claseFecha1" class="clasef" >
                     1
                 </td>
-                <td id="claseHora1">
+                <td id="claseHora1" class="claseh">
                     2
                 </td>
-                <td id="claseDuracion1" >
+                <td id="claseDuracion1" class="clased">
                     3
                 </td>
                 
             </tr>
             <tr>
-                <td id="claseFecha2">
+                <td id="claseFecha2" class="clasef" >
                     4
                 </td>
-                <td id="claseHora2">
+                <td id="claseHora2" class="claseh">
                     5
                 </td>
-                <td id="claseDuracion2">
+                <td id="claseDuracion2" class="clased">
                     6
                 </td>
             </tr>
             <tr>
-                <td id="claseFecha3">
+                <td id="claseFecha3" class="clasef" >
                     7
                 </td>
-                <td id="claseHora3">
+                <td id="claseHora3" class="claseh">
                     8
                 </td>
-                <td id="claseDuracion3">
+                <td id="claseDuracion3" class="clased">
                9     
                 </td>
                
             </tr>
             <tr>
-                <td id="claseFecha4">
+                <td id="claseFecha4" class="clasef" >
                     10
                 </td>
-                <td id="claseHora4">
+                <td id="claseHora4" class="claseh">
                     11
                 </td>
-                <td id="claseDuracion4">
+                <td id="claseDuracion4" class="clased">
                     12
                 </td>
                 
             </tr>
             <tr>
-                <td id="claseFecha5">
+                <td id="claseFecha5" class="clasef" >
 
                 </td>
-                <td id="claseHora5">
+                <td id="claseHora5" class="claseh">
 
                 </td>
-                <td id="claseDuracion5">
-
-                </td>
-                
-            </tr>
-            <tr>
-                <td id="claseFecha6">
-
-                </td>
-                <td id="claseHora6">
-
-                </td>
-                <td id="claseDuracion6">
+                <td id="claseDuracion5" class="clased">
 
                 </td>
                 
             </tr>
             <tr>
-                <td id="claseFecha7">
+                <td id="claseFecha6" class="clasef" >
 
                 </td>
-                <td id="claseHora7">
+                <td id="claseHora6" class="claseh">
 
                 </td>
-                <td id="claseDuracion7">
+                <td id="claseDuracion6" class="clased">
+
+                </td>
+                
+            </tr>
+            <tr>
+                <td id="claseFecha7" class="clasef" >
+
+                </td>
+                <td id="claseHora7" class="claseh">
+
+                </td>
+                <td id="claseDuracion7" class="clased">
 
                 </td>
             </tr>
             <tr>
-                <td id="claseFecha8">
+                <td id="claseFecha8" class="clasef" >
 
                 </td>
-                <td id="claseHora8">
+                <td id="claseHora8" class="claseh">
 
                 </td>
-                <td id="claseDuracion8">
+                <td id="claseDuracion8" class="clased">
 
                 </td>
             </tr>

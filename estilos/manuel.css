@@ -1,6 +1,8 @@
 /*************************************************/
 /*       estilos para la barra de navegacion     */
 /*************************************************/
+@media screen and (min-width: 800px) 
+{
 #barra_de_navegacion ul 
 {
     list-style-type: none;
@@ -37,6 +39,48 @@
     grid-row: 1/2;
     z-index: 100;
 }
+}
+@media screen and (max-width: 800px) 
+{
+#barra_de_navegacion ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    overflow: hidden;
+    z-index: 100;
+    font-size: 90%;
+}
+#barra_de_navegacion   li 
+{
+    float: left;
+    width: 100px;
+    z-index: 100;
+    font-size: 90%;
+}
+#barra_de_navegacion li a 
+{
+    display: block;
+    color: blue;
+    text-align: center;
+    font-weight: bold;
+    font-size: 100%;
+    padding: 5px;
+    text-decoration: none;
+    z-index: 100;
+}  
+#barra_de_navegacion li a:hover 
+{
+    color:darkblue; font-weight: bold;
+}
+#barra_de_navegacion
+{
+    grid-column: 3/11;
+    grid-row: 1/2;
+    z-index: 100;
+}
+}
 .negrita
 {
   font-weight: bold ;
@@ -68,182 +112,371 @@ p
 .grilla
 { display:grid;
   grid-template-columns:repeat(10, 10%);
-  grid-template-rows:repeat(20, 8%);
+  grid-template-rows:repeat(50, 30px);
 }
 .titulo
 {
-  grid-column: 1/4;
+  grid-column: 1/9;
   grid-row: 1/2;
-  line-height: 1;
+  line-height: .7;
+  font-size: 90%;
 }
-#comentarios
+#comentarios 
 {
-  grid-column: 9/ span 11;
-  grid-row: 2/ span 14;
-  font-family: karla;
-  font-style: italic;
-  font-size: 140%;
-  border-style: none none none solid;
-  border-color: lightgray;
-  padding-left: 10px;
-  border-width: 4px;
+  display:none;
 }
+@media screen and (min-width: 1024px) 
+{
+  #comentarios 
+  { 
+    display:block;
+    grid-column: 9/11;
+    grid-row: 4/51;
+    font-family: karla;
+    font-style: italic;
+    font-size: 140%;
+    border-style: none none none solid;
+    border-color: lightgray;
+    padding-left: 10px;
+    border-width: 4px;
+  }
+}
+@media screen and (max-width: 800px) {
 #parrafo1
 {
-  grid-column: 1/9;
-  grid-row: 2/3;
-  margin: 15px 7px 0px 7px;
+  grid-column: 1/11;
+  grid-row: 3/6;
+  margin: 60px 7px 0px 7px; 
+  font-size: 95%;  
 }
+}
+@media screen and (min-width: 800px) {
+  #parrafo1
+  {
+    grid-column: 1/9;
+    grid-row: 3/6;
+    margin: 60px 7px 0px 7px;    
+  }
+}
+
 #imagen1
 { 
-  grid-row: 3/7;
+  grid-row: 9/11;
   grid-column: 3/6;
-  margin-top: 0%;
+  margin-top: 10px;
 }
 #foto1
 {
-  height:380px
+  max-width: 100%;
 }
+@media screen and (min-width: 800px) {
 #parrafo2
 {
-  grid-column: 3/7;
-  grid-row: 6/7;
- margin-top: 0%;
+  grid-column: 2/7;
+  grid-row: 19/20;
+  margin-top: 0%;
 }
 #parrafo3
 {
-  grid-column: 3/7;
-  grid-row: 6/8;
-  margin-top: 35px;
+  grid-column: 2/8;
+  grid-row: 20/24;
 }
 #imagen2
 {
-  grid-column: 2/6;
-  grid-row: 8/10;
-}
-#foto2
-{
-  height:300px
+  grid-column: 1/6;
+  grid-row: 27/32;
 }
 #parrafo4
 {
   grid-column: 4/8;
-  grid-row: 8/10;
+  grid-row: 27/28;
   margin-top: 0px;
 }
 #parrafo5
 {
-  grid-column: 4/8;
-  grid-row: 8/12;
+  grid-column: 4/9;
+  grid-row: 28/32;
+  margin-top: 0;
 }
+}
+@media screen and (max-width:1100px)
+{
+  #parrafo4
+{
+  grid-column: 4/9;
+  grid-row: 27/28;
+  margin-top: 0px;
+}
+#parrafo5
+{
+  grid-column: 4/9;
+  grid-row: 28/34;
+  margin-top: 0;
+}
+}
+@media screen and (max-width: 800px) {
+  #parrafo2
+  {
+    grid-column: 2/7;
+    grid-row: 15/16;
+    margin-top: 0%;
+    font-size: 95%;
+  }
+  #parrafo3
+  {
+  grid-column: 2/11;
+  grid-row: 16/21;
+  font-size: 95%;
+  }
+#imagen2
+{
+  grid-column: 1/6;
+  grid-row: 19/23;
+}
+#parrafo4
+{
+  grid-column: 6/11;
+  grid-row: 19/20;
+  margin-top: 0px;
+  font-size: 95%;
+}
+#parrafo5
+{
+  grid-column: 6/11;
+  grid-row: 20/23;
+  margin-top: 0;
+  font-size: 95%;
+}
+}
+#foto2
+{
+  max-width: 100%;
+}
+@media screen and (min-width: 800px) {
 #imagen3
 {
   grid-column: 6/9;
-  grid-row: 11/14;
-}
-#foto3
-{
-  height:400px
+  grid-row: 41/50;
 }
 #parrafo6
 {
   grid-column: 4/6;
-  grid-row: 10/12;
+  grid-row: 41/42;
   text-align: center;
-  margin-top: 120px;
 }
 #parrafo7
 {
   grid-column: 1/6;
-  grid-row: 11/14;
+  grid-row: 42/49;
   margin-left: 5px;
 }
+}
+@media screen and (max-width: 800px) 
+{
+  #imagen3
+  {
+    grid-column: 6/9;
+    grid-row: 30/40;
+  }
+  #parrafo6
+  {
+    grid-column: 4/6;
+    grid-row: 30/31;
+    text-align: center;
+    font-size: 95%;
+  }
+  #parrafo7
+  {
+    grid-column: 1/6;
+    grid-row: 31/38;
+    margin-left: 5px;
+    font-size: 95%;
+  }
+}
+#foto3
+{
+  max-width:100%;
+}
+@media screen and (min-width: 1024px)
+{
 #parrafo8
 {
-
   grid-column: 1/9;
-  grid-row: 2/3;
+  grid-row: 4/5;
   margin: 35px 7px 0px 7px;
 }
 #imagen4
 {
-  grid-column: 3/6;
-  grid-row: 3/7;
+  grid-column: 1/6;
+  grid-row: 11/16;
   margin-top: 40px;
 }
 #foto4
 {
-  height:300px
+ max-width:100%;
 }
 #parrafo9
 {
-  grid-column: 3/9;
-  grid-row: 5/6;
+  grid-column: 1/3;
+  grid-row: 18/19;
   margin-top:60px;
+  font-size: 95%;
+  font-weight: bold;
 }
 #imagen5
 {
-  grid-column: 2/4;
-  grid-row: 6/8;
+  grid-column: 7/9;
+  grid-row: 23/29;
   margin-top: 0px;
 }
 #foto5
 {
-  height:350px
+  max-width: 100%;
 }
 #parrafo10
 {
-  grid-column: 2/4;
-  grid-row: 8/9;
-  margin-top:80px;
+  grid-column: 7/9;
+  grid-row: 33/37;
+  font-size: 95%;
+  font-weight: bold;
 }
 #parrafo11
 {
-  grid-column: 5/8;
-  grid-row: 6/9;
+  grid-column: 4/9;
+  grid-row: 11/16;
   margin-top: 0px;
 }
 #parrafo12
 {
-  grid-column: 2/8;
-  grid-row: 10/11;
+  grid-column: 1/7;
+  grid-row: 24/27;
 }
 #parrafo13
 {
-  grid-column: 2/8;
-  grid-row: 11/13;
+  grid-column: 1/7;
+  grid-row: 28/33;
 }
 #parrafo14
 {
-  grid-column: 2/8;
-  grid-row: 13/15;
+  grid-column: 1/9;
+  grid-row: 39/51;
+}
+}
+@media screen and (max-width: 1024px)
+{
+#parrafo8
+{
+  grid-column: 1/11;
+  grid-row: 4/5;
+  margin: 35px 7px 0px 7px;
+  font-size: 120%;
+}
+#imagen4
+{
+  grid-column: 1/4;
+  grid-row: 10/13;
+  margin-top: 40px;
+}
+#foto4
+{
+ max-width:100%;
+}
+#parrafo9
+{
+  grid-column: 1/3;
+  grid-row: 16/17;
+  margin-top:60px;
+  font-size: 95%;
+  font-weight: bold;
+}
+#imagen5
+{
+  grid-column: 9/11;
+  grid-row: 23/29;
+  margin-top: 0px;
+}
+#foto5
+{
+  max-width: 100%;
+}
+#parrafo10
+{
+  grid-column: 9/11;
+  grid-row: 32/33;
+  font-size: 95%;
+  font-weight: bold;
+}
+#parrafo11
+{
+  grid-column: 4/11;
+  grid-row: 11/14;
+  margin-top: 0px;
+  font-size: 120%;
+}
+#parrafo12
+{
+  grid-column: 1/9;
+  grid-row: 22/26;
+  font-size: 120%;
+}
+#parrafo13
+{
+  grid-column: 1/9;
+  grid-row: 26/30;
+  font-size: 120%;
+}
+#parrafo14
+{
+  grid-column: 1/11;
+  grid-row: 37/51;
+  font-size: 120%;
+}
+@media screen and (max-width: 700px)
+{
+  #parrafo9
+{
+  grid-column: 1/3;
+  grid-row: 14/17;
+  margin-top:60px;
+  font-size: 95%;
+  font-weight: bold;
+}
+#parrafo10
+{
+  grid-column: 9/11;
+  grid-row: 30/33;
+  font-size: 95%;
+  font-weight: bold;
+}
+
+}
 }
 #lista_tarifas
 {
   grid-column: 2/span 7;
-  grid-row:3/span 9;
+  grid-row:4/span 9;
 }
 #estilo_lista_tarifas
 {
   font-family: karla;
   font-weight:bold;
-  font-size: 150%;
-  line-height: 2;
+  font-size: 130%;
+  line-height: 1.5;
 }
 #contacto_parrafos
 {
   grid-column: 2/8;
-  grid-row: 3/10;
+  grid-row: 4/10;
   font-family: karla;
   font-size: 90%;
   line-height: 1.2;
 }
 #revisiones_parrafos
 {
-  grid-column: 2/8;
-  grid-row: 2/16;
+  grid-column: 2/9;
+  grid-row: 3/51;
   font-family: karla;
-  font-size: 100%;
+  font-size: 90%;
   line-height: 1.3;
   border-style: none none none solid;
   border-color: lightgray;
@@ -254,7 +487,6 @@ p
 /***********************************************/
 /* formatos de la pagina de reserva de clases  */
 /***********************************************/
-
 #boton_de_login
 {
   margin-top:5px;
@@ -267,8 +499,8 @@ p
 #mensaje_de_bienvenida
 {
   grid-column:1/9;
-  grid-row:7/8;
-  transform: translate(0px, -140px);
+  grid-row:6/8;
+  transform: translate(0px, -180px);
   width:600px;
   display:none;
   font-size: 90%;
@@ -302,7 +534,7 @@ p
 {
   grid-column:1/9;
   grid-row:7/8;
-  transform: translate(0px, -140px);
+  transform: translate(0px, -40px);
   display:none;
   width:600px;
   font-size: 60%;
@@ -310,7 +542,7 @@ p
 }
 #mail_ya_registrado
 {
-  grid-column:4/7;
+  grid-column:3/7;
   grid-row:2/3;
   display:none;
   font-size: 60%;
@@ -340,18 +572,36 @@ p
 }
 #titulo_de_la_agenda
 {
-  grid-column: 4/6;
-  grid-row:3/4;
-  transform:translatey(155px);
-   margin-left: 85px;
+  grid-column: 4/11;
+  grid-row:10/12;
+  margin-left: 80px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 40px;
   font-size: 92%;
+  font-weight: bold;
 }
-#mes_calendario
+@media screen and (max-width: 1024px) 
 {
+  #mes_calendario
+  {
+  width: 800px;
+  grid-column: 6/12;
+  grid-row: 12/20;
+  }
+  #titulo_de_la_agenda
+  {
+    margin-left: 225px;
+  }
+}
+  @media screen and (min-width: 1024px) 
+{
+#mes_calendario
+  {
   width: 800px;
   grid-column: 3/8;
-  grid-row: 7/12;
-  transform: translatey(-52px);
+  grid-row: 12/20;
+  }
 }
 table
 {
@@ -362,9 +612,47 @@ table, th, td
   {
     border: 1px solid black;
   }
-#tabla_de_clases
+@media screen and (min-width: 1224px) 
 {
-  width: 244px !important;
+  .clasef
+  {
+    width:100px !important;
+  }
+  .claseh
+  {
+    width:40px !important;
+  }
+  .clased
+  {
+    width:80px !important;
+  }
+  #tabla_de_clases
+  {
+    width: 240px !important;
+  }
+}
+@media screen and (max-width: 1224px) 
+{
+  .clasef
+  {
+    width:60px !important;
+    font-size: 90%;
+  }
+  .claseh
+  {
+    width:30px !important;
+    font-size: 90%;
+  }
+  .clased
+  {
+    width:60px !important;
+    font-size: 90%;
+  }
+  #tabla_de_clases
+  {
+    width: 180px !important;
+    font-size: 90%;
+  }
 }
 #tabla_de_clases th
 {
@@ -377,7 +665,7 @@ table, th, td
 #loader 
 {
   grid-column:2/3;
-  grid-row: 4/5;
+  grid-row: 6/8;
   display: none;
   border: 4px solid #f3f3f3;
   border-top: 4px solid #3498db;
@@ -390,32 +678,67 @@ table, th, td
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
+@media screen and (min-width: 1024px)
+{
+#registrateestilo
+{
+  grid-column: 5/ 10;
+  grid-row: 5/8;
+  height: 20px;
+  transform:translate(-76px, 58px);
+}
+}
+@media screen and (max-width: 1024px)
+{
+#registrateestilo
+{
+  grid-column: 5/ 10;
+  grid-row: 5/8;
+  height: 20px;
+  transform:translate(90px, 58px);
+}
+}
 #registracion
 {
-  grid-column: 5/ 8;
-  grid-row: 3/6;
+  grid-column: 5/ 10;
+  grid-row: 5/8;
   height: 20px;
-  transform:translate(-76px, 43px);
+  transform:translate(-76px, 78px);
   z-index:300;
 }
 #registro_de_usuario
 {
   width: 200px;
   height: 20px;
-  grid-row: 3/6;
-  grid-column: 3/7;
+  grid-row: 5/8;
+  grid-column: 3/10;
+  margin-top: 15px;
 }
 #mesyaniodesplegados
 {
-  transform:translate(300px, -20px)
+  transform:translate(420px, -65px);
+  font-weight: bold;
 }
-#explica_la_reserva
+#actualizarMMyAA
 {
-  grid-row:8/11;
-  grid-column: 8/9;
-  line-height: 16px;
-  transform:translatey(-100px);
+  transform:translate(180px, -60px); 
+}
+@media screen and (min-width: 1224px) {
+  #explica_la_reserva
+  {
+    grid-row:15/18;
+    grid-column: 8/9;
+    line-height: 16px;
+    transform:translatey(-100px);
+  }
+}
+@media screen and (max-width: 1224px) {
+  #explica_la_reserva
+  {
+    grid-row:19/21;
+    grid-column: 6/8;
+    line-height: 16px;
+  }
 }
 #dias_ocupados
 {
@@ -423,7 +746,7 @@ table, th, td
   height: 20px;
   border: 1px black solid ;
   grid-column: 7/9;
-  grid-row: 7/9;
+  grid-row: 9/11;
   margin-bottom: 0px;
 }
 #di_ocu
@@ -440,7 +763,7 @@ table, th, td
   border: 1px black solid ;
   background-color: greenyellow;
   grid-column: 7/9;
-  grid-row: 10/12;
+  grid-row: 12/14;
   margin-top: 20px;
   margin-bottom: 0px;
 }
@@ -450,14 +773,30 @@ table, th, td
   font-size: 80%;
   font-weight: bold;
 }
-#haz_click
+@media screen and (min-width: 1024px) 
 {
-  grid-column:4/7;
-  grid-row: 9 / 10;
-  font-size: 120%;
-  text-align:center;
-  margin-top:0px;
-  display:none;
+  #haz_click
+  {
+    grid-column:4/9;
+    grid-row: 18 / 19;
+    font-size: 120%;
+    text-align:left;
+    margin-top:0px;
+    display:none;
+  }
+}
+
+@media screen and (max-width: 1024px) 
+{
+  #haz_click
+  {
+    grid-column:6/11;
+    grid-row: 18 / 19;
+    font-size: 120%;
+    text-align:left;
+    margin-top:0px;
+    display:none;
+  }
 }
 #ultima_semana
 {
@@ -468,7 +807,7 @@ table, th, td
 #proximas_clases
 {
   grid-column: 1/3;
-  grid-row: 5/span 9;  
+  grid-row: 11/19; 
 }
 /**************************************************/
 /* Formulario de registracion de un nuevo usuario */
@@ -554,13 +893,12 @@ table, th, td
 .dura 
 {
   transform:translateX(10px);
- width: 20px;
+  width: 20px;
 }
 .tema
 {
   transform:translateX(160px);
   width:20px;
-
 }
 form div p select 
 {
