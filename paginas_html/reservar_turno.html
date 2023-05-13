@@ -39,15 +39,15 @@
         <!--*****************************************************************
             *                Contenido                                      *
             ***************************************************************** -->  
-            <aside id="comentarios">
-                <div id="primerComentario">
-                    
-                </div>
-                <br>
-                <div id="segundoComentario">
+        <aside id="comentarios">
+            <div id="primerComentario">
                 
-                </div>
-            </aside>
+            </div>
+            <br>
+            <div id="segundoComentario">
+            
+            </div>
+        </aside>
         <!--*****************************************************************
             *                registro de nuevo usuario                      *
             ***************************************************************** -->  
@@ -55,32 +55,23 @@
             Si nunca has ingresado 
             <button class="open-button" id="registrate">Registrate</button>
         </div>
-        <div id="registracion">
-            
-                       
+        <div id="registracion">          
             <div class="form-popup" id="myForm">
                 <form class="form-container" id="myFormx">
-                  
                     <label for="emailN"><b>Email</b></label>
                     <input type="email" placeholder="ingresa tu correo" name="emailN" required>
-
                     <label for="emailN1"><b>Repite el Email</b></label>
-                    <input type="email" placeholder="repite tu correo" name="emailN1" required>
-                    
+                    <input type="email" placeholder="repite tu correo" name="emailN1" required> 
                     <label for="nombre"><b>Nombre</b></label>
-                    <input id="name1" type="text" placeholder="Nombre" name="nombre" required>
-                    
+                    <input id="name1" type="text" placeholder="Nombre" name="nombre" required>   
                     <label for="apellido"><b>Apellido</b></label>
-                    <input id="surname1" type="text" placeholder="Apellido" name="apellido" required>
-                    
+                    <input id="surname1" type="text" placeholder="Apellido" name="apellido" required> 
                     <label for="telefono">Numero de teléfono (opcional)</label>
                     <input id="phone1" type="tel" placeholder="( ) nnnn-nnnn" name="telefono" >
-                    
                     <button type="submit" id="NuevoUsuario" class="btn">Registrarse</button>
                     <button type="button" class="btn cancel" id="cerrarUsuario">Cancelar</button>
                 </form>
             </div>
-
         </div>
         <section id="registro_de_usuario">
             <form  name="direcciondecorreo" method="post">
@@ -100,49 +91,48 @@
                 <p>
                     <input  type="button" id="actualizarMMyAA" value="Ver días con clases disponibles"> 
                 </p>
-                </form>
-          <div id="mesyaniodesplegados" class="despliegue_de_la_agenda">
+            </form>
+            <div id="mesyaniodesplegados" class="despliegue_de_la_agenda">
                 Mes del año
-          </div>
-          <div id="mensaje_de_bienvenida">
-            <p>
-                Bienvenido  Nombre Apellido ! ya puedes gestionar la agenda de clases.
-            </p>
-          </div>
-          <div id="mensaje_de_obligacion_de_login">
-            <p>
-                Debes ingresar con tu email para poder gestionar la agenda
-            </p>
-          </div>
-          <div id="mensaje_de_hacer_logoff">
-            <p>
-                Antes de ingresar nuevamente debes hacer log off
-            </p>
-          </div>
-          <div id="mensaje_de_mail_no_registrado">
-            <p>
-                Tu email no esta registrado, debes registrarte antes de agendar una clase
-            </p>
-          </div>
+            </div>
+            <div id="mensaje_de_bienvenida">
+                <p>
+                    Bienvenido  Nombre Apellido ! ya puedes gestionar la agenda de clases.
+                </p>
+            </div>
+            <div id="mensaje_de_obligacion_de_login">
+                <p>
+                    Debes ingresar con tu email para poder gestionar la agenda
+                </p>
+            </div>
+            <div id="mensaje_de_hacer_logoff">
+                <p>
+                    Antes de ingresar nuevamente debes hacer log off
+                </p>
+            </div>
+            <div id="mensaje_de_mail_no_registrado">
+                <p>
+                    Tu email no esta registrado, debes registrarte antes de agendar una clase
+                </p>
+            </div>
         </section>
-          <div id="mail_ya_registrado">
+        <div id="mail_ya_registrado">
             <p>
                 Tu email ya esta registrado, puedes hacer Log in
             </p>
-          </div>
-          <div id="mensaje_de_mail_inactivado">
+        </div>
+        <div id="mensaje_de_mail_inactivado">
             <p>
                 Debes comunicarte telefonicamente con el profesor antes de continuar
             </p>
-          </div>
-          <div id="los_mails_no_coinciden">
+        </div>
+        <div id="los_mails_no_coinciden">
             <p>
                 Los mails ingresados no coinciden
             </p>
-          </div>
-          <div id="loader">
-
-          </div> 
+        </div>
+        <div id="loader">
+        </div> 
         <h3 id="titulo_de_la_agenda" class="despliegue_de_la_agenda">
                 Agenda de : 
         </h3>
@@ -219,717 +209,711 @@
             <p id="dias_con_disponibilidad">  </p> 
             <p id="di_dis"> Hay horarios disponibles </p>
         </div>               
-    
-    <p class="negrita" id="haz_click" class="despliegue_de_la_agenda"> Haz click sobre el dia que quieras agendar</p>
-        
-       
-     <div class="despliegue_de_la_agenda">
-        <div class="formulario-popup" id="miformulario">
-            <form action="/action_page.php" class="formulario-container">
-                <h3 id="titu-agenda">
-                    Agenda de clases del día  dd / mm  / aaaa  
-                </h3>
-                <div id="horario-1" class="horario-disponible">
-                    <p id="h1-rango" >
-                        Comienzo a las 01hs disponible
-                    </p>
-                    <p class="dura" >
-                        <select id="duracion-1" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" >
-                        <select id="tema-1">
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-1" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-1">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-1" for="check-1"> agendar </label>
-                        <input type="checkbox" name="check-1" value="2">
-                    </p>
-                </div>
-                <div id="horario-2" class="horario-disponible">
-                    <p id="h2-rango" >
-                        Comienzo a las 02hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-2" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-2" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional"style="width:600px;">
-                        <input  id="mensaje-2" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-2">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-2" for="check-2"> agendar </label>
-                        <input type="checkbox" name="check-2" value="2">
-                    </p>
-                </div>
-                <div id="horario-3" class="horario-disponible">
-                    <p id="h3-rango">
-                        Comienzo a las 03hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;" >
-                        <select id="duracion-3" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-3" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-3" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-3">
-                    </p>
-                    <p class="agendar"  >
-                        <label id="check-3" for="check-3"> agendar </label>
-                        <input type="checkbox" name="check-3" value="2">
-                    </p>
-                </div>
-                <div id="horario-4" class="horario-disponible">
-                    <p id="h4-rango">
-                        Comienzo a las 04hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-4" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-4" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-4" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-4">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-4" for="check-4"> agendar </label>
-                        <input type="checkbox" name="check-4" value="2">
-                    </p>
-                </div>
-                <div id="horario-5" class="horario-disponible">
-                    <p id="h5-rango">
-                        Comienzo a las 05hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-5" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-5" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-5" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-5">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-5" for="check-5"> agendar </label>
-                        <input type="checkbox" name="check-5" value="2">
-                    </p>
-                </div>
-                <div id="horario-6" class="horario-disponible">
-                    <p id="h6-rango">
-                        Comienzo a las 06hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-6" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-6" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-6" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-6">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-6" for="check-6"> agendar </label>
-                        <input type="checkbox" name="check-6" value="2">
-                    </p>
-                </div>
-                <div id="horario-7" class="horario-disponible">
-                    <p id="h7-rango">
-                        Comienzo a las 07hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-7" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-7" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-7" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-7">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-7" for="check-7"> agendar </label>
-                        <input type="checkbox" name="check-7" value="2">
-                    </p>
-                </div>
-                <div id="horario-8" class="horario-disponible">
-                    <p id="h8-rango">
-                        Comienzo a las 08hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-8" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-8" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-8" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-8">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-8" for="check-8"> agendar </label>
-                        <input type="checkbox" name="check-8" value="2">
-                    </p>
-                </div>
-                <div id="horario-9" class="horario-disponible">
-                    <p id="h9-rango">
-                        Comienzo a las 09hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-9" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-9" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-9" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-9">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-9" for="check-9"> agendar </label>
-                        <input type="checkbox" name="check-9" value="2">
-                    </p>
-                </div>
-                <div id="horario-10" class="horario-disponible">
-                    <p id="h10-rango">
-                        Comienzo a las 10hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-10" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-10" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-10" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-10">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-10" for="check-10"> agendar </label>
-                        <input type="checkbox" name="check-10" value="2">
-                    </p>
-                </div>
-                <div id="horario-11" class="horario-disponible">
-                    <p id="h11-rango">
-                        Comienzo a las 11hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-11" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-11" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-11" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-11">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-11" for="check-11"> agendar </label>
-                        <input type="checkbox" name="check-11" value="2">
-                    </p>
-                </div>
-                <div id="horario-12" class="horario-disponible">
-                    <p id="h12-rango">
-                        Comienzo a las 12hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-12" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-12" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-12" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-12">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-12" for="check-12"> agendar </label>
-                        <input type="checkbox" name="check-12" value="2">
-                    </p>
-                </div>
-                <div id="horario-13" class="horario-disponible">
-                    <p id="h13-rango">
-                        Comienzo a las 13hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-13" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-13"> 
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-13" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-13">
-                    </p>
-                    <p class="agendar">
-                        <label id="check-13" for="check-13"> agendar </label>
-                        <input type="checkbox" name="check-13" value="2">
-                    </p>
-                </div>
-                <div id="horario-14" class="horario-disponible">
-                    <p id="h14-rango">
-                        Comienzo a las 14hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-14" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-14" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-14" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-14">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-14" for="check-14"> agendar </label>
-                        <input type="checkbox" name="check-14" value="2">
-                    </p>
-                </div>
-                <div id="horario-15" class="horario-disponible">
-                    <p id="h15-rango">
-                        Comienzo a las 15hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-15" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-15" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input  id="mensaje-15" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-15">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-15" for="check-15"> agendar </label>
-                        <input type="checkbox" name="check-15" value="2">
-                    </p>
-                </div>
-                <div id="horario-16" class="horario-disponible">
-                    <p id="h16-rango">
-                        Comienzo a las 16hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-16" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-16" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-16" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-16">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-16" for="check-16"> agendar </label>
-                        <input type="checkbox" name="check-16" value="2">
-                    </p>
-                </div>
-                <div id="horario-17" class="horario-disponible">
-                    <p id="h17-rango">
-                        Comienzo a las 17hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-17" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-17" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-17" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-17">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-17" for="check-1"> agendar </label>
-                        <input type="checkbox" name="check-17" value="2">
-                    </p>
-                </div>
-                <div id="horario-18" class="horario-disponible">
-                    <p id="h18-rango">
-                        Comienzo a las 18hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-18" >
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-18" >
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-18" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-18">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-18" for="check-18"> agendar </label>
-                        <input type="checkbox" name="check-18" value="2">
-                    </p>
-                </div>
-                <div id="horario-19" class="horario-disponible">
-                    <p id="h19-rango">
-                        Comienzo a las 19hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-19">
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-19">
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-19" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-19">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-19" for="check-19"> agendar </label>
-                        <input type="checkbox" name="check-19" value="2">
-                    </p>
-                </div>
-                <div id="horario-20" class="horario-disponible">
-                    <p id="h20-rango">
-                        Comienzo a las 20hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-20">
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-20">
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-20" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-20">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-20" for="check-20"> agendar </label>
-                        <input type="checkbox" name="check-20" value="2">
-                    </p>
-                </div>
-                <div id="horario-21" class="horario-disponible">
-                    <p id="h21-rango">
-                        Comienzo a las 21hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-21">
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-21">
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-21" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-21">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-21" for="check-21"> agendar </label>
-                        <input type="checkbox" name="check-21" value="2">
-                    </p>
-                </div>
-                <div id="horario-22" class="horario-disponible">
-                    <p id="h22-rango">
-                        Comienzo a las 22hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-22">
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-22">
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-22" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-22">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-22" for="check-22"> agendar </label>
-                        <input type="checkbox" name="check-22" value="2">
-                    </p>
-                </div>
-                <div id="horario-23" class="horario-disponible">
-                    <p id="h23-rango">
-                        Comienzo a las 23hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-23">
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-23">
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-23" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-23">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-23" for="check-23"> agendar </label>
-                        <input type="checkbox" name="check-23" value="2">
-                    </p>
-                </div>
-                <div id="horario-24" class="horario-disponible">
-                    <p id="h24-rango">
-                        Comienzo a las 24hs disponible
-                    </p>
-                    <p class="dura" style="width:20px;">
-                        <select id="duracion-24">
-                            <option value="60">60 minutos </option>
-                            <option value="45">45 minutos </option>
-                        </select>
-                    </p>
-                    <p class="tema" style="width:20px;">
-                        <select id="tema-24">
-                            <option value="canto">Canto </option>
-                            <option value="guita">Guitarra </option>
-                        </select>
-                    </p>
-                    <p class="mensaje-adicional" style="width:600px;">
-                        <input id="mensaje-24" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-24">
-                    </p>
-                    <p class="agendar" >
-                        <label id="check-24" for="check-24"> agendar </label>
-                        <input type="checkbox" name="check-24" value="2">
-                    </p>
-                </div>
-                <br> <br>
-                <button type="button" class="boton" id="actualizarestaAgenda">Actualizar agenda</button>
-                <button type="button" class="cancelacion" id="noactualizarestaAgenda">No actualizar agenda</button>
-            </form>
+        <p class="negrita" id="haz_click" class="despliegue_de_la_agenda"> 
+            Haz click sobre el dia que quieras agendar
+        </p>       
+        <div class="despliegue_de_la_agenda">
+            <div class="formulario-popup" id="miformulario">
+                <form action="/action_page.php" class="formulario-container">
+                    <h3 id="titu-agenda">
+                        Agenda de clases del día  dd / mm  / aaaa  
+                    </h3>
+                    <div id="horario-1" class="horario-disponible">
+                        <p id="h1-rango" >
+                            Comienzo a las 01hs disponible
+                        </p>
+                        <p class="dura" >
+                            <select id="duracion-1" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" >
+                            <select id="tema-1">
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-1" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-1">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-1" for="check-1"> agendar </label>
+                            <input type="checkbox" name="check-1" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-2" class="horario-disponible">
+                        <p id="h2-rango" >
+                            Comienzo a las 02hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-2" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-2" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional"style="width:600px;">
+                            <input  id="mensaje-2" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-2">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-2" for="check-2"> agendar </label>
+                            <input type="checkbox" name="check-2" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-3" class="horario-disponible">
+                        <p id="h3-rango">
+                            Comienzo a las 03hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;" >
+                            <select id="duracion-3" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-3" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-3" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-3">
+                        </p>
+                        <p class="agendar"  >
+                            <label id="check-3" for="check-3"> agendar </label>
+                            <input type="checkbox" name="check-3" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-4" class="horario-disponible">
+                        <p id="h4-rango">
+                            Comienzo a las 04hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-4" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-4" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-4" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-4">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-4" for="check-4"> agendar </label>
+                            <input type="checkbox" name="check-4" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-5" class="horario-disponible">
+                        <p id="h5-rango">
+                            Comienzo a las 05hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-5" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-5" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-5" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-5">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-5" for="check-5"> agendar </label>
+                            <input type="checkbox" name="check-5" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-6" class="horario-disponible">
+                        <p id="h6-rango">
+                            Comienzo a las 06hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-6" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-6" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-6" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-6">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-6" for="check-6"> agendar </label>
+                            <input type="checkbox" name="check-6" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-7" class="horario-disponible">
+                        <p id="h7-rango">
+                            Comienzo a las 07hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-7" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-7" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-7" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-7">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-7" for="check-7"> agendar </label>
+                            <input type="checkbox" name="check-7" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-8" class="horario-disponible">
+                        <p id="h8-rango">
+                            Comienzo a las 08hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-8" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-8" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-8" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-8">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-8" for="check-8"> agendar </label>
+                            <input type="checkbox" name="check-8" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-9" class="horario-disponible">
+                        <p id="h9-rango">
+                            Comienzo a las 09hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-9" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-9" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-9" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-9">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-9" for="check-9"> agendar </label>
+                            <input type="checkbox" name="check-9" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-10" class="horario-disponible">
+                        <p id="h10-rango">
+                            Comienzo a las 10hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-10" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-10" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-10" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-10">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-10" for="check-10"> agendar </label>
+                            <input type="checkbox" name="check-10" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-11" class="horario-disponible">
+                        <p id="h11-rango">
+                            Comienzo a las 11hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-11" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-11" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-11" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-11">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-11" for="check-11"> agendar </label>
+                            <input type="checkbox" name="check-11" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-12" class="horario-disponible">
+                        <p id="h12-rango">
+                            Comienzo a las 12hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-12" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-12" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-12" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-12">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-12" for="check-12"> agendar </label>
+                            <input type="checkbox" name="check-12" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-13" class="horario-disponible">
+                        <p id="h13-rango">
+                            Comienzo a las 13hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-13" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-13"> 
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-13" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-13">
+                        </p>
+                        <p class="agendar">
+                            <label id="check-13" for="check-13"> agendar </label>
+                            <input type="checkbox" name="check-13" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-14" class="horario-disponible">
+                        <p id="h14-rango">
+                            Comienzo a las 14hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-14" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-14" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-14" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-14">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-14" for="check-14"> agendar </label>
+                            <input type="checkbox" name="check-14" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-15" class="horario-disponible">
+                        <p id="h15-rango">
+                            Comienzo a las 15hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-15" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-15" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input  id="mensaje-15" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-15">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-15" for="check-15"> agendar </label>
+                            <input type="checkbox" name="check-15" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-16" class="horario-disponible">
+                        <p id="h16-rango">
+                            Comienzo a las 16hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-16" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-16" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-16" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-16">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-16" for="check-16"> agendar </label>
+                            <input type="checkbox" name="check-16" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-17" class="horario-disponible">
+                        <p id="h17-rango">
+                            Comienzo a las 17hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-17" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-17" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-17" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-17">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-17" for="check-1"> agendar </label>
+                            <input type="checkbox" name="check-17" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-18" class="horario-disponible">
+                        <p id="h18-rango">
+                            Comienzo a las 18hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-18" >
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-18" >
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-18" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-18">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-18" for="check-18"> agendar </label>
+                            <input type="checkbox" name="check-18" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-19" class="horario-disponible">
+                        <p id="h19-rango">
+                            Comienzo a las 19hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-19">
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-19">
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-19" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-19">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-19" for="check-19"> agendar </label>
+                            <input type="checkbox" name="check-19" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-20" class="horario-disponible">
+                        <p id="h20-rango">
+                            Comienzo a las 20hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-20">
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-20">
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-20" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-20">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-20" for="check-20"> agendar </label>
+                            <input type="checkbox" name="check-20" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-21" class="horario-disponible">
+                        <p id="h21-rango">
+                            Comienzo a las 21hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-21">
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-21">
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-21" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-21">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-21" for="check-21"> agendar </label>
+                            <input type="checkbox" name="check-21" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-22" class="horario-disponible">
+                        <p id="h22-rango">
+                            Comienzo a las 22hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-22">
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-22">
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-22" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-22">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-22" for="check-22"> agendar </label>
+                            <input type="checkbox" name="check-22" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-23" class="horario-disponible">
+                        <p id="h23-rango">
+                            Comienzo a las 23hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-23">
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-23">
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-23" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-23">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-23" for="check-23"> agendar </label>
+                            <input type="checkbox" name="check-23" value="2">
+                        </p>
+                    </div>
+                    <div id="horario-24" class="horario-disponible">
+                        <p id="h24-rango">
+                            Comienzo a las 24hs disponible
+                        </p>
+                        <p class="dura" style="width:20px;">
+                            <select id="duracion-24">
+                                <option value="60">60 minutos </option>
+                                <option value="45">45 minutos </option>
+                            </select>
+                        </p>
+                        <p class="tema" style="width:20px;">
+                            <select id="tema-24">
+                                <option value="canto">Canto </option>
+                                <option value="guita">Guitarra </option>
+                            </select>
+                        </p>
+                        <p class="mensaje-adicional" style="width:600px;">
+                            <input id="mensaje-24" type="text" placeholder="puedes dejar un mensaje aqui" name="msj-24">
+                        </p>
+                        <p class="agendar" >
+                            <label id="check-24" for="check-24"> agendar </label>
+                            <input type="checkbox" name="check-24" value="2">
+                        </p>
+                    </div>
+                    <br> <br>
+                    <button type="button" class="boton" id="actualizarestaAgenda">Actualizar agenda</button>
+                    <button type="button" class="cancelacion" id="noactualizarestaAgenda">No actualizar agenda</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="despliegue_de_la_agenda" id="proximas_clases">
-        <strong style="margin-left: 5px;">
-            Próximas clases agendadas
-        </strong>
-        <table id="tabla_de_clases">
-            <thead>
-                <tr>
-                    <th class="clasef" >
-                        Fecha
-                    </th>
-                    <th class="claseh" >
-                        Hora
-                    </th>
-                    <th class="clased" >
-                        Duración
-                    </th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td id="claseFecha1" class="clasef" >
-                    1
-                </td>
-                <td id="claseHora1" class="claseh">
-                    2
-                </td>
-                <td id="claseDuracion1" class="clased">
-                    3
-                </td>
-                
-            </tr>
-            <tr>
-                <td id="claseFecha2" class="clasef" >
-                    4
-                </td>
-                <td id="claseHora2" class="claseh">
-                    5
-                </td>
-                <td id="claseDuracion2" class="clased">
-                    6
-                </td>
-            </tr>
-            <tr>
-                <td id="claseFecha3" class="clasef" >
-                    7
-                </td>
-                <td id="claseHora3" class="claseh">
-                    8
-                </td>
-                <td id="claseDuracion3" class="clased">
-               9     
-                </td>
-               
-            </tr>
-            <tr>
-                <td id="claseFecha4" class="clasef" >
-                    10
-                </td>
-                <td id="claseHora4" class="claseh">
-                    11
-                </td>
-                <td id="claseDuracion4" class="clased">
-                    12
-                </td>
-                
-            </tr>
-            <tr>
-                <td id="claseFecha5" class="clasef" >
-
-                </td>
-                <td id="claseHora5" class="claseh">
-
-                </td>
-                <td id="claseDuracion5" class="clased">
-
-                </td>
-                
-            </tr>
-            <tr>
-                <td id="claseFecha6" class="clasef" >
-
-                </td>
-                <td id="claseHora6" class="claseh">
-
-                </td>
-                <td id="claseDuracion6" class="clased">
-
-                </td>
-                
-            </tr>
-            <tr>
-                <td id="claseFecha7" class="clasef" >
-
-                </td>
-                <td id="claseHora7" class="claseh">
-
-                </td>
-                <td id="claseDuracion7" class="clased">
-
-                </td>
-            </tr>
-            <tr>
-                <td id="claseFecha8" class="clasef" >
-
-                </td>
-                <td id="claseHora8" class="claseh">
-
-                </td>
-                <td id="claseDuracion8" class="clased">
-
-                </td>
-            </tr>
-        </tbody>
-        </table>
-
-    </div>
-   
-</main>  
+        <div class="despliegue_de_la_agenda" id="proximas_clases">
+            <strong style="margin-left: 5px;">
+                Próximas clases agendadas
+            </strong>
+            <table id="tabla_de_clases">
+                <thead>
+                    <tr>
+                        <th class="clasef" >
+                            Fecha
+                        </th>
+                        <th class="claseh" >
+                            Hora
+                        </th>
+                        <th class="clased" >
+                            Duración
+                        </th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="claseFecha1" class="clasef" >
+                            1
+                        </td>
+                        <td id="claseHora1" class="claseh">
+                            2
+                        </td>
+                        <td id="claseDuracion1" class="clased">
+                            3
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td id="claseFecha2" class="clasef" >
+                            4
+                        </td>
+                        <td id="claseHora2" class="claseh">
+                            5
+                        </td>
+                        <td id="claseDuracion2" class="clased">
+                            6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="claseFecha3" class="clasef" >
+                            7
+                        </td>
+                        <td id="claseHora3" class="claseh">
+                            8
+                        </td>
+                        <td id="claseDuracion3" class="clased">
+                            9     
+                        </td>               
+                    </tr>
+                    <tr>
+                        <td id="claseFecha4" class="clasef" >
+                            10
+                        </td>
+                        <td id="claseHora4" class="claseh">
+                            11
+                        </td>
+                        <td id="claseDuracion4" class="clased">
+                            12
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td id="claseFecha5" class="clasef" >
+                            13
+                        </td>
+                        <td id="claseHora5" class="claseh">
+                            14
+                        </td>
+                        <td id="claseDuracion5" class="clased">
+                            15
+                        </td>                    
+                    </tr>
+                    <tr>
+                        <td id="claseFecha6" class="clasef" >
+                            16
+                        </td>
+                        <td id="claseHora6" class="claseh">
+                            17
+                        </td>
+                        <td id="claseDuracion6" class="clased">
+                            18
+                        </td>                    
+                    </tr>
+                    <tr>
+                        <td id="claseFecha7" class="clasef" >
+                            19
+                        </td>
+                        <td id="claseHora7" class="claseh">
+                            20
+                        </td>
+                        <td id="claseDuracion7" class="clased">
+                            21
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="claseFecha8" class="clasef" >
+                            22
+                        </td>
+                        <td id="claseHora8" class="claseh">
+                            23
+                        </td>
+                        <td id="claseDuracion8" class="clased">
+                            24
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+    </main> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../Javascrips/javascripts_obtenercomentarios.js"> </script>      
     <script type="module" src="../Javascrips/manueljs.js"> </script>
 </body>

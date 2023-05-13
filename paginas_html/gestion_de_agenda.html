@@ -9,833 +9,817 @@
 </head>
 <body>
    <main id="main1">
-    <h1>
-        Mantenimiento de la agenda de Clases de Canto y Guitarra
-    </h1>
-    <h2>
-        Bienvenido Juan Manuel
-    </h2>
-    
-    <div id="ingreso_de_clave">
-        <h3>
-        Por favor ingresa tu clave de seguridad
-        </h3>
-        <form>
-            <label for="password" value=""> Contraseña</label> 
-            <input id="contrasenia" type="password" size="15"  name="password"> 
-            <input id="boton_de_login" type="button" name="entrar" value="Log-In"> 
-            <input id="boton_de_logout" type="button" name="salir" value="Log-Out"> 
-        </form>
-    </div>
-    <div id="actividades">
-        <h3>
-            Que deseas hacer ?
-        </h3>
-        <p id="mensaje">
-            Mensaje de error
-        </p>
-        <br>
-        <form id="miformulario" style="margin-top: 5px;">
-        <button type="button" class="btn" id="agregar_clases">Agregar horarios de clases</button>
-        <label for="fecha-n"><b>Fecha</b></label>
-        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-n">             <label for="hora-n"><b>hora</b></label>
-        <select id="hora-n" name="hora-n">
-            <option value="1">01</option>
-            <option value="2">02</option>
-            <option value="3">03</option>
-            <option value="4">04</option>
-            <option value="5">05</option>
-            <option value="6">06</option>
-            <option value="7">07</option>
-            <option value="8">08</option>
-            <option value="9">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-        </select>
-       <br> 
-        <button style="margin-top: 5px;" type="button" class="btn" id="eliminar_clases">Eliminar horarios de clases</button>
-        <label for="fecha-e"><b>Fecha</b></label>
-        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-e"> 
-        <label for="hora-e"><b>hora</b></label>
-        <select id="hora-e" name="hora-e">
-            <option value="1">01</option>
-            <option value="2">02</option>
-            <option value="3">03</option>
-            <option value="4">04</option>
-            <option value="5">05</option>
-            <option value="6">06</option>
-            <option value="7">07</option>
-            <option value="8">08</option>
-            <option value="9">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-        </select>
-        <br> 
-        <button style="margin-top: 5px;" type="button"  class="btn" id="agendar_clases">Agendar una clase</button>
-        <label for="fecha-a"><b>Fecha</b></label>
-        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-a"> 
-        <label for="hora-a"><b>hora</b></label>
-        <select id="hora-a" name="hora-a">
-            <option value="1">01</option>
-            <option value="2">02</option>
-            <option value="3">03</option>
-            <option value="4">04</option>
-            <option value="5">05</option>
-            <option value="6">06</option>
-            <option value="7">07</option>
-            <option value="8">08</option>
-            <option value="9">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-        </select>
-        <label for="correo_electronico_a"> Correo Electrónico del alumno</label> 
-        <input type="email" size="55"  name="correo_electronico_a" id="email-a"> 
-        <select id="duracion-a" >
-                <option value="60">60 minutos </option>
-                <option value="45">45 minutos </option>
-        </select>
-        <select id="tema-a">
-            <option value="canto">Canto </option>
-            <option value="guita">Guitarra </option>
-        </select>      
-        <br> 
-        <button style="margin-top: 5px;" type="button"  class="btn" id="desagendar_clases">Desagendar una clase</button>
-        <label for="fecha-d"><b>Fecha</b></label>
-        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-d"> 
-        <label for="hora-d"><b>hora</b></label>
-        <select id="hora-d" name="hora-d">
-            <option value="1">01</option>
-            <option value="2">02</option>
-            <option value="3">03</option>
-            <option value="4">04</option>
-            <option value="5">05</option>
-            <option value="6">06</option>
-            <option value="7">07</option>
-            <option value="8">08</option>
-            <option value="9">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-        </select>
-        <br> 
-        <button style="margin-top: 5px;" type="button" class="btn" id="ver_agenda">Ver Agenda de un dia</button>
-        <label for="fecha-v"><b>Fecha</b></label>
-        <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-v"> 
-        <button style="margin-top: 5px;" type="button" class="btn" id="verCalendario">Consulta del calendario mensual</button>
-        <label for="mesYAnioADesplegar"><b>Mes y Año</b></label>
-        <input type="month" style="width:200px"  name="mesYAnioADesplegar" id="mmaaaa"> 
-        <br> 
-        <button style="margin-top: 5px;" type="button"  class="btn" id="inactivar_alumno">Inactivar un alumno</button>
-        <label for="correo_electronico_i"> Correo Electrónico del alumno</label> 
-        <input id="correo_electronico_i" type="email" size="55"  name="correo_electronico_i"> 
-        <br> 
-        <button style="margin-top: 5px;" type="button"  class="btn" id="reactivar_alumno">Re-activar un alumno</button>
-        <label for="correo_electronico_r"> Correo Electrónico del alumno</label> 
-        <input id="correo_electronico_r" type="email" size="55"  name="correo_electronico_r"> 
-        <br> 
-        <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_alumnos_activos">Ver padrón de alumnos activos</button>
-        <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_alumnos_inactivos">Ver padrón de alumnos in-activos</button>
-        <br> 
-        <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_agenda_alumno">Consultar la agenda de un alumno</button>
-        <label for="correo_electronico_va"> Correo Electrónico del alumno</label> 
-        <input id="correo_electronico_va" type="email" size="55"  name="correo_electronico_va"> 
-        <select id="futuro" >
-            <option value="futuro">Futuras clases </option>
-            <option value="pasado">Clases pasadas</option>
-        </select>
-        <br> 
-    
-    </form>
-    </div>
-    <div id="volver">
-        <p>
-            Volver a tu pagina web
-            <button type="button" class="btn" id="volver_inicio">Volver al Inicio </button>
-            <button type="button" class="btn" id="volver_reserva">Volver a la página de reserva de turnos</button>
-        </p>
-
-    </div>
-</main>
-<main id="main2">
-    <h1>
-        Agenda de Clases de Canto y Guitarra del dia
-    </h1>
-    <h2 id="fecha_a_desplegar">
-        dd/mes/año
-    </h2>
-    <h2 id="tituloader">
-        <div id="loader">
+        <h1>
+            Mantenimiento de la agenda de Clases de Canto y Guitarra
+        </h1>
+        <h2>
+            Bienvenido Juan Manuel
+        </h2>
+        
+        <div id="ingreso_de_clave">
+            <h3>
+            Por favor ingresa tu clave de seguridad
+            </h3>
+            <form>
+                <label for="password" value=""> Contraseña</label> 
+                <input id="contrasenia" type="password" size="15"  name="password"> 
+                <input id="boton_de_login" type="button" name="entrar" value="Log-In"> 
+                <input id="boton_de_logout" type="button" name="salir" value="Log-Out"> 
+            </form>
         </div>
-        
-    </h2>
-    <table>
-        <tr>
-        <th class="columna1">
-        Hora 
-        </th>   
-        <th class="columna2">
-        Estado                                         
-        </th>
-        <th class="columna3">
-        Dur.
-        </th> 
-        <th class="columna4">
-           Conten. 
-        </th>  
-        <th class="columna5">
-             Email  del  alumno
-        </th>  
-        <th class="columna6">
-             Apellido y Nombre
-        </th>  
-        <th class="columna7">
-            Teléfono   
-        </th> 
-        <th class="columna8">
-            Mensaje   
-        </th>  
-    </tr>
-    <tr id="hora-de-clase-1">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-2">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-3">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-4">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-5">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-6">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-7">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-8">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-9">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-10">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-11">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-12">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-13">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-14">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-15">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-16">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-17">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-18">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-19">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-20">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-21">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-22">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-23">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-        <tr id="hora-de-clase-24">
-            <td class="columna1">
-            </td>
-            <td class="columna2">
-            </td>
-            <td class="columna3">
-            </td>
-            <td  class="columna4">
-            </td>
-            <td class="columna5">
-            </td>
-            <td class="columna6">
-            </td>
-            <td  class="columna7">
-            </td>
-            <td  class="columna8">
-            </td>
-        </tr>
-
-    </table>
-    <button type="button" class="btn" id="VolverAMantenimiento">Volver a la pagina de mantenimiento de clases</button>
-</main>
-<main id="main3">
-    <h1>
-        Padrón de Alumnos 
-    </h1>
-    <h2 id="alumnos_activos">
-        ACTIVOS
-    </h2>
-    <h2 id="alumnos_inactivos">
-        INACTIVOS
-    </h2>
-    <table>
-        <tr>
-            <th style="width: 300px;">
-            Dirección de e-mail 
+        <div id="actividades">
+            <h3>
+                Que deseas hacer ?
+            </h3>
+            <p id="mensaje">
+                Mensaje de error
+            </p>
+            <br>
+            <form id="miformulario" style="margin-top: 5px;">
+                <button type="button" class="btn" id="agregar_clases">Agregar horarios de clases</button>
+                <label for="fecha-n"><b>Fecha</b></label>
+                <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-n">             <label for="hora-n"><b>hora</b></label>
+                <select id="hora-n" name="hora-n">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                </select>
+                <br> 
+                <button style="margin-top: 5px;" type="button" class="btn" id="eliminar_clases">Eliminar horarios de clases</button>
+                <label for="fecha-e"><b>Fecha</b></label>
+                <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-e"> 
+                <label for="hora-e"><b>hora</b></label>
+                <select id="hora-e" name="hora-e">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                </select>
+                <br> 
+                <button style="margin-top: 5px;" type="button"  class="btn" id="agendar_clases">Agendar una clase</button>
+                <label for="fecha-a"><b>Fecha</b></label>
+                <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-a"> 
+                <label for="hora-a"><b>hora</b></label>
+                <select id="hora-a" name="hora-a">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                </select>
+                <label for="correo_electronico_a"> Correo Electrónico del alumno</label> 
+                <input type="email" size="55"  name="correo_electronico_a" id="email-a"> 
+                <select id="duracion-a" >
+                        <option value="60">60 minutos </option>
+                        <option value="45">45 minutos </option>
+                </select>
+                <select id="tema-a">
+                    <option value="canto">Canto </option>
+                    <option value="guita">Guitarra </option>
+                </select>      
+                <br> 
+                <button style="margin-top: 5px;" type="button"  class="btn" id="desagendar_clases">Desagendar una clase</button>
+                <label for="fecha-d"><b>Fecha</b></label>
+                <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-d"> 
+                <label for="hora-d"><b>hora</b></label>
+                <select id="hora-d" name="hora-d">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                </select>
+                <br> 
+                <button style="margin-top: 5px;" type="button" class="btn" id="ver_agenda">Ver Agenda de un dia</button>
+                <label for="fecha-v"><b>Fecha</b></label>
+                <input type="date" style="width:100px" placeholder="dd/mm/aaaa" name="fecha-v"> 
+                <button style="margin-top: 5px;" type="button" class="btn" id="verCalendario">Consulta del calendario mensual</button>
+                <label for="mesYAnioADesplegar"><b>Mes y Año</b></label>
+                <input type="month" style="width:200px"  name="mesYAnioADesplegar" id="mmaaaa"> 
+                <br> 
+                <button style="margin-top: 5px;" type="button"  class="btn" id="inactivar_alumno">Inactivar un alumno</button>
+                <label for="correo_electronico_i"> Correo Electrónico del alumno</label> 
+                <input id="correo_electronico_i" type="email" size="55"  name="correo_electronico_i"> 
+                <br> 
+                <button style="margin-top: 5px;" type="button"  class="btn" id="reactivar_alumno">Re-activar un alumno</button>
+                <label for="correo_electronico_r"> Correo Electrónico del alumno</label> 
+                <input id="correo_electronico_r" type="email" size="55"  name="correo_electronico_r"> 
+                <br> 
+                <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_alumnos_activos">Ver padrón de alumnos activos</button>
+                <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_alumnos_inactivos">Ver padrón de alumnos in-activos</button>
+                <br> 
+                <button style="margin-top: 5px;" type="button"  class="btn" id="consultar_agenda_alumno">Consultar la agenda de un alumno</button>
+                <label for="correo_electronico_va"> Correo Electrónico del alumno</label> 
+                <input id="correo_electronico_va" type="email" size="55"  name="correo_electronico_va"> 
+                <select id="futuro" >
+                    <option value="futuro">Futuras clases </option>
+                    <option value="pasado">Clases pasadas</option>
+                </select>
+                <br> 
+            </form>
+        </div>
+        <div id="volver">
+            <p>
+                Volver a tu pagina web
+                <button type="button" class="btn" id="volver_inicio">Volver al Inicio </button>
+                <button type="button" class="btn" id="volver_reserva">Volver a la página de reserva de turnos</button>
+            </p>
+        </div>
+    </main>
+    <main id="main2">
+        <h1>
+            Agenda de Clases de Canto y Guitarra del dia
+        </h1>
+        <h2 id="fecha_a_desplegar">
+            dd/mes/año
+        </h2>
+        <h2 id="tituloader">
+            <div id="loader">
+            </div>            
+        </h2>
+        <table>
+            <tr>
+            <th class="columna1">
+            Hora 
             </th>   
-            <th style="width: 300px;" >
-            Nombre del alumno                                        
+            <th class="columna2">
+            Estado                                         
             </th>
-            <th style="width: 400px;">
-            Apellido del alumno
+            <th class="columna3">
+            Dur.
             </th> 
-            <th style="width: 150px;">
-            Teléfono 
+            <th class="columna4">
+            Conten. 
+            </th>  
+            <th class="columna5">
+                Email  del  alumno
+            </th>  
+            <th class="columna6">
+                Apellido y Nombre
+            </th>  
+            <th class="columna7">
+                Teléfono   
+            </th> 
+            <th class="columna8">
+                Mensaje   
             </th>  
         </tr>
-    </table>
-    <section id="secciondealumnos">
-
-    </section>
-    
-<button type="button" class="btn" id="VolverAMantenimiento1">Volver a la pagina de mantenimiento de clases</button>
-
-</main>
-<main id="main4">
-    <h1 id="futuras_clases">
-        Consulta de las clases futuras agendadas de 
-    </h1>
-    <h1 id="pasadas_clases">
-        Consultas de clases pasadas de 
-    </h1>
-    <h2 id="alumno_consultado">
-        
-    </h2>
-    <div id="calendario_consultado"></div>
-    <table style="margin-left: 350px;">
-        <tr>
-            <th style="width: 140px !important;">
-            Fecha 
-            </th>   
-            <th style="width: 60px;" >
-            Hora                                       
-            </th>
-            <th style="width: 80px;">
-            Duracion
-            </th> 
-            <th style="width: 120px;">
-            Tipo de clase
-            </th>  
-            <th style="width: 320px;">
-            Mensaje del alumno
-            </th>
-        </tr>
-    </table>
-    <section id="secciondeagenda" style="margin-left: 350px;">
-
-    </section>
-    <!--table id="tabladealumnos" class="paraborrar">
-
-    </table-->
-<button type="button" class="btn" id="VolverAMantenimiento2">Volver a la pagina de mantenimiento de clases</button>
-
-</main>
-</main>
-<main id="main5">
-    <h1 id="statusDelCalendario">
-        Consulta del calendario del mes
-    </h1>
-    <h2 id="mesADesplegar">
-         
-    </h2>
-    
-    <div id="mes_calendario" class="despliegue_de_la_agenda">
-        <table >
-            <tr>
-                <th style="width:14.3%"> Dom </th>
-                <th style="width:14.3%"> Lun </th>
-                <th style="width:14.3%"> Mar </th>
-                <th style="width:14.3%"> Mie </th>
-                <th style="width:14.3%"> Jue </th>
-                <th style="width:14.3%"> Vie </th>
-                <th style="width:14.3%"> Sab </th>                            
+        <tr id="hora-de-clase-1">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
             </tr>
-            <tr>
-                <td  id="dia11"> 01</td>
-                <td  id="dia12"> 02</td>
-                <td  id="dia13"> 03</td>
-                <td  id="dia14"> 04</td>
-                <td  id="dia15"> 05</td>
-                <td  id="dia16"> 06</td>
-                <td  id="dia17"> 07</td>
+            <tr id="hora-de-clase-2">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
             </tr>
-            <tr>
-                <td  id="dia21"> 08</td>
-                <td  id="dia22"> 09</td>
-                <td  id="dia23"> 10</td>
-                <td  id="dia24"> 11</td>
-                <td  id="dia25"> 12</td>
-                <td  id="dia26"> 13</td>
-                <td  id="dia27"> 14</td>
+            <tr id="hora-de-clase-3">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
             </tr>
-            <tr>
-                <td  id="dia31"> 15</td>
-                <td  id="dia32"> 16</td>
-                <td  id="dia33"> 17</td>
-                <td  id="dia34"> 18</td>
-                <td  id="dia35"> 19</td>
-                <td  id="dia36"> 20</td>
-                <td  id="dia37"> 21</td>
+            <tr id="hora-de-clase-4">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
             </tr>
-            <tr>
-                <td  id="dia41"> 22</td>
-                <td  id="dia42"> 23</td>
-                <td  id="dia43"> 24</td>
-                <td  id="dia44"> 25</td>
-                <td  id="dia45"> 26</td>
-                <td  id="dia46"> 27</td>
-                <td  id="dia47"> 28</td>
+            <tr id="hora-de-clase-5">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
             </tr>
-            <tr>
-                <td  id="dia51"> 29</td>
-                <td  id="dia52"> 30</td>
-                <td  id="dia53"> 31</td>
-                <td  id="dia54"> 32</td>
-                <td  id="dia55"> 33</td>
-                <td  id="dia56"> 34</td>
-                <td  id="dia57"> 35</td>
+            <tr id="hora-de-clase-6">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
             </tr>
-            <tr id="ultima_semana">
-                <td  style="width:14.3%" id="dia61"> 36</td>
-                <td  style="width:14.3%" id="dia62"> 37</td>
-                <td  style="width:14.3%" id="dia63"> 38</td>
-                <td  style="width:14.3%" id="dia64"> 39</td>
-                <td  style="width:14.3%" id="dia65"> 40</td>
-                <td  style="width:14.3%" id="dia66"> 41</td>
-                <td  style="width:14.3%" id="dia67"> 42</td>
+            <tr id="hora-de-clase-7">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-8">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-9">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-10">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-11">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-12">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-13">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-14">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-15">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-16">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-17">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-18">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-19">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-20">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-21">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-22">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-23">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
+            </tr>
+            <tr id="hora-de-clase-24">
+                <td class="columna1">
+                </td>
+                <td class="columna2">
+                </td>
+                <td class="columna3">
+                </td>
+                <td  class="columna4">
+                </td>
+                <td class="columna5">
+                </td>
+                <td class="columna6">
+                </td>
+                <td  class="columna7">
+                </td>
+                <td  class="columna8">
+                </td>
             </tr>
         </table>
-        <img src="../imagenes/referencias.jpg" width="500px">
-        <br> <br>
-        <button type="button" class="btn" id="VolverAMantenimiento3">Volver a la pagina de mantenimiento de clases</button>
-    </div>
-</main>
-    <!--script type="module" src="../Javascrips/javascripts_mantenimiento_agenda_firestore.js"> </script-->
+        <button type="button" class="btn" id="VolverAMantenimiento">Volver a la pagina de mantenimiento de clases</button>
+    </main>
+    <main id="main3">
+        <h1>
+            Padrón de Alumnos 
+        </h1>
+        <h2 id="alumnos_activos">
+            ACTIVOS
+        </h2>
+        <h2 id="alumnos_inactivos">
+            INACTIVOS
+        </h2>
+        <table>
+            <tr>
+                <th style="width: 300px;">
+                Dirección de e-mail 
+                </th>   
+                <th style="width: 300px;" >
+                Nombre del alumno                                        
+                </th>
+                <th style="width: 400px;">
+                Apellido del alumno
+                </th> 
+                <th style="width: 150px;">
+                Teléfono 
+                </th>  
+            </tr>
+        </table>
+        <section id="secciondealumnos">
+        </section>     
+        <button type="button" class="btn" id="VolverAMantenimiento1">Volver a la pagina de mantenimiento de clases</button>
+    </main>
+    <main id="main4">
+        <h1 id="futuras_clases">
+            Consulta de las clases futuras agendadas de 
+        </h1>
+        <h1 id="pasadas_clases">
+            Consultas de clases pasadas de 
+        </h1>
+        <h2 id="alumno_consultado">
+            
+        </h2>
+        <div id="calendario_consultado"></div>
+        <table style="margin-left: 350px;">
+            <tr>
+                <th style="width: 140px !important;">
+                Fecha 
+                </th>   
+                <th style="width: 60px;" >
+                Hora                                       
+                </th>
+                <th style="width: 80px;">
+                Duracion
+                </th> 
+                <th style="width: 120px;">
+                Tipo de clase
+                </th>  
+                <th style="width: 320px;">
+                Mensaje del alumno
+                </th>
+            </tr>
+        </table>
+        <section id="secciondeagenda" style="margin-left: 350px;">
+        </section>
+       <button type="button" class="btn" id="VolverAMantenimiento2">Volver a la pagina de mantenimiento de clases</button>
+    </main>
+    <main id="main5">
+        <h1 id="statusDelCalendario">
+            Consulta del calendario del mes
+        </h1>
+        <h2 id="mesADesplegar">          
+        </h2>       
+        <div id="mes_calendario" class="despliegue_de_la_agenda">
+            <table >
+                <tr>
+                    <th style="width:14.3%"> Dom </th>
+                    <th style="width:14.3%"> Lun </th>
+                    <th style="width:14.3%"> Mar </th>
+                    <th style="width:14.3%"> Mie </th>
+                    <th style="width:14.3%"> Jue </th>
+                    <th style="width:14.3%"> Vie </th>
+                    <th style="width:14.3%"> Sab </th>                            
+                </tr>
+                <tr>
+                    <td  id="dia11"> 01</td>
+                    <td  id="dia12"> 02</td>
+                    <td  id="dia13"> 03</td>
+                    <td  id="dia14"> 04</td>
+                    <td  id="dia15"> 05</td>
+                    <td  id="dia16"> 06</td>
+                    <td  id="dia17"> 07</td>
+                </tr>
+                <tr>
+                    <td  id="dia21"> 08</td>
+                    <td  id="dia22"> 09</td>
+                    <td  id="dia23"> 10</td>
+                    <td  id="dia24"> 11</td>
+                    <td  id="dia25"> 12</td>
+                    <td  id="dia26"> 13</td>
+                    <td  id="dia27"> 14</td>
+                </tr>
+                <tr>
+                    <td  id="dia31"> 15</td>
+                    <td  id="dia32"> 16</td>
+                    <td  id="dia33"> 17</td>
+                    <td  id="dia34"> 18</td>
+                    <td  id="dia35"> 19</td>
+                    <td  id="dia36"> 20</td>
+                    <td  id="dia37"> 21</td>
+                </tr>
+                <tr>
+                    <td  id="dia41"> 22</td>
+                    <td  id="dia42"> 23</td>
+                    <td  id="dia43"> 24</td>
+                    <td  id="dia44"> 25</td>
+                    <td  id="dia45"> 26</td>
+                    <td  id="dia46"> 27</td>
+                    <td  id="dia47"> 28</td>
+                </tr>
+                <tr>
+                    <td  id="dia51"> 29</td>
+                    <td  id="dia52"> 30</td>
+                    <td  id="dia53"> 31</td>
+                    <td  id="dia54"> 32</td>
+                    <td  id="dia55"> 33</td>
+                    <td  id="dia56"> 34</td>
+                    <td  id="dia57"> 35</td>
+                </tr>
+                <tr id="ultima_semana">
+                    <td  style="width:14.3%" id="dia61"> 36</td>
+                    <td  style="width:14.3%" id="dia62"> 37</td>
+                    <td  style="width:14.3%" id="dia63"> 38</td>
+                    <td  style="width:14.3%" id="dia64"> 39</td>
+                    <td  style="width:14.3%" id="dia65"> 40</td>
+                    <td  style="width:14.3%" id="dia66"> 41</td>
+                    <td  style="width:14.3%" id="dia67"> 42</td>
+                </tr>
+            </table>
+            <img src="../imagenes/referencias.jpg" width="500px">
+            <br> <br>
+            <button type="button" class="btn" id="VolverAMantenimiento3">Volver a la pagina de mantenimiento de clases</button>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../Javascrips/javascripts_mantenimiento_agenda.js"> </script>
-
 </body>
 </html>

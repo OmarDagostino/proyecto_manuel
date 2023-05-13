@@ -14,7 +14,7 @@ La pagina de contacto solo ofrece un teléfono para comunicarse, y se puede envi
 
 En la página de comentarios de Alumnos se pueden ver los mensajes que le han dejado al profesor respecto de las clases y el método de enseñanza.
 
-En la pagina de Agendar una clase (sin duda la mas interesante desde el punto de vista técnico), se puede hacer Log In con el correo electrónico (no se requiere contraseña, y los mails son convertidos automaticamente a minusculas), y si nunca se entró a la pagina, se puede registrar con solo el email, nombre y apellido, teléfono (opcional). No se hace chequeo de existencia de mail, ni se envía mail de confirmación, solo tiene que tener un formato de mail válido. Se utiliza el localstorage para almacenar el ultimo correo electronico con que se hizo Log In.
+En la pagina de Agendar una clase (sin duda la mas interesante desde el punto de vista técnico), se puede hacer Log In con el correo electrónico (no se requiere contraseña, y los mails son convertidos automaticamente a minusculas), y si nunca se entró a la pagina, se puede registrar con solo el email, nombre y apellido, teléfono (opcional). No se hace chequeo de existencia de mail, ni se envía mail de confirmación, solo tiene que tener un formato de mail válido. 
 Una vez hecho el LogIn se muestra un calendario del mes en curso, con los días que tienen disponibilidad horaria con fondo verde. Haciendo click sobre el día elegido, se abre la agenda de horarios disponibles para ese día, dando la posibilidad de agendar una clase (o desagendarla si la persona que hizo el LogIn la había agendado previamente). Solo hay que hacer click sobre el check que dice agendar (o desagendar) y luego apretar el boton de actualizar agenda. Si no se desea actualizar la agenda hay un boton para ello. 
 Tanto cuando se hace LogIn o cuando se actualiza un día de la agenda, aparecen las próximas clases agendadas del alumno en una tabla al costado del calendario.
 Se puede elegir el mes que se desee, para desplegar la disponibilidad de horarios. Luego de elegir el mes deseado hay que oprimir el boton Ver clases disponibles.
@@ -27,8 +27,8 @@ Cuando se hace LogIn se desplegaran las funciones de mantenimiento de la agenda,
 * eliminar horarios de clases
 * agendar una clase para un alumno
 * desagendar una clase
-* ver la agenda de un día
-* desplegar un calendario mensual con el resumen de actividades de cada dia (clases agendadas y disponibles)
+* ver la agenda de un día con los horarios disponibles y clases agendadas
+* desplegar un calendario mensual con el resumen de actividades de cada dia (con clases agendadas y disponibles) con un esquema de colores
 * inactivar un alumno
 * re-activar un alumno
 * ver el padron de alumnos (activos o inactivos)
@@ -36,7 +36,15 @@ Cuando se hace LogIn se desplegaran las funciones de mantenimiento de la agenda,
 
 2) Tecnologías utilizadas
 
-El proyecto se realizó en HTML, CSS y Javascript. Se utiliza la base de datos gratuita de Firestore (en modo de prueba), también el servicio de mail gratuito de Formspree (con el recaptcha pertinente). Se utiliza archivo json para almacenar los mensajes de los alumnos y desplegarlos en casi todas las páginas. Se utiliza el localstorage para almacenar el último email que hizo logIn y lo despliega.
+* HTML
+* CSS
+* Javascript
+* Base de Datos Firestore (para almacenar la agenda y los usuarios registrados)
+* Servicio de mail de Formspree (y su correspondiente re-captcha) para la página de contacto
+* Localstorage para almacenar el último mail con que se ha hecho LogIn y poder desplegarlo
+* Localstorage para almacenar el día que se esta agendando en caso que se actualice la página cuando se esta queriendo elegir una clase (y no tenga que acceder nuevamente) para re-desplegarla automaticamente
+* Libraria SweetAlert para mejorar el aspecto de algunos mensajes de notificaciones
+* Archivo JSON para almacenar los mensajes de los alumnos (que serán desplegados en el aside de casi todas las paginas)
 
 
 
